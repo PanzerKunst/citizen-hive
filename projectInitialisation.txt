@@ -1,0 +1,10 @@
+Upgrade SBT
+Edit PATH and remove the path to SBT added at the end (it's now duplicated)
+
+Upgrade Play Framework
+Edit PATH and Update path to Play in PATH
+
+Open a terminal, CD to project root
+Run "play new website"
+
+Edit website/build.sbt with dependencies
