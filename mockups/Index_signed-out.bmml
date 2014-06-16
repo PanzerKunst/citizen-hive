@@ -263,10 +263,10 @@
         <text>Project%20title</text>
       </controlProperties>
     </control>
-    <control controlID="240" controlTypeID="com.balsamiq.mockups::Button" x="676" y="75" w="189" h="45" measuredW="183" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="240" controlTypeID="com.balsamiq.mockups::Button" x="676" y="75" w="189" h="45" measuredW="180" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
-        <text>Organize%20your%20Open%20Project</text>
+        <text>Organizing%20an%20Open%20Project</text>
       </controlProperties>
     </control>
     <control controlID="241" controlTypeID="com.balsamiq.mockups::Button" x="517" y="75" w="166" h="45" measuredW="162" measuredH="27" zOrder="3" locked="false" isInGroup="-1">

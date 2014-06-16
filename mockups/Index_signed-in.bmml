@@ -245,10 +245,10 @@
         <text>Create%20an%20Open%20Project</text>
       </controlProperties>
     </control>
-    <control controlID="268" controlTypeID="com.balsamiq.mockups::Button" x="596" y="75" w="189" h="45" measuredW="183" measuredH="27" zOrder="47" locked="false" isInGroup="-1">
+    <control controlID="268" controlTypeID="com.balsamiq.mockups::Button" x="596" y="75" w="189" h="45" measuredW="180" measuredH="27" zOrder="47" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
-        <text>Organize%20your%20Open%20Project</text>
+        <text>Organizing%20an%20Open%20Project</text>
       </controlProperties>
     </control>
     <control controlID="269" controlTypeID="com.balsamiq.mockups::Button" x="779" y="75" w="76" h="45" measuredW="74" measuredH="27" zOrder="48" locked="false" isInGroup="-1">
@@ -261,9 +261,9 @@
         <text>Contact%20us</text>
       </controlProperties>
     </control>
-    <control controlID="271" controlTypeID="com.balsamiq.mockups::LinkBar" x="155" y="715" w="-1" h="-1" measuredW="715" measuredH="21" zOrder="50" locked="false" isInGroup="-1">
+    <control controlID="271" controlTypeID="com.balsamiq.mockups::LinkBar" x="155" y="715" w="-1" h="-1" measuredW="711" measuredH="21" zOrder="50" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>My%20projects%2C%20My%20profile%2C%20Create%20an%20Open%20Project%2C%20Organize%20your%20Open%20Project%2C%20About%20us%2C%20Contact%20us%2C%20Sign%20out</text>
+        <text>My%20projects%2C%20My%20profile%2C%20Create%20an%20Open%20Project%2C%20Organizing%20an%20Open%20Project%2C%20About%20us%2C%20Contact%20us%2C%20Sign%20out</text>
       </controlProperties>
     </control>
     <control controlID="272" controlTypeID="com.balsamiq.mockups::Button" x="931" y="75" w="89" h="45" measuredW="70" measuredH="27" zOrder="51" locked="false" isInGroup="-1">
