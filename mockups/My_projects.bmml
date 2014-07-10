@@ -2,7 +2,7 @@
   <controls>
     <control controlID="83" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1024" h="771" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>My%20projects%0Ahttp%3A//citizenhive.se/open-projects/my-projects</text>
+        <text>My%20projects%0Ahttp%3A//openprojects.citizenhive.se/my-projects</text>
       </controlProperties>
     </control>
     <control controlID="89" controlTypeID="com.balsamiq.mockups::ModalScreen" x="0" y="707" w="1024" h="37" measuredW="320" measuredH="240" zOrder="1" locked="false" isInGroup="-1"/>
@@ -42,48 +42,44 @@
         <text>Edit</text>
       </controlProperties>
     </control>
-    <control controlID="217" controlTypeID="com.balsamiq.mockups::Button" x="237" y="75" w="112" h="45" measuredW="90" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="225" controlTypeID="com.balsamiq.mockups::LinkBar" x="442" y="715" w="-1" h="-1" measuredW="141" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
-        <color>14540253</color>
-        <text>My%20projects</text>
+        <text>Footer%2C%20links%2C%20here</text>
       </controlProperties>
     </control>
-    <control controlID="218" controlTypeID="com.balsamiq.mockups::Button" x="341" y="75" w="102" h="45" measuredW="79" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="226" controlTypeID="com.balsamiq.mockups::Button" x="378" y="75" w="112" h="45" measuredW="106" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
-        <text>My%20profile</text>
+        <text>Open%20Projects</text>
       </controlProperties>
     </control>
-    <control controlID="219" controlTypeID="com.balsamiq.mockups::Button" x="437" y="75" w="166" h="45" measuredW="162" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="227" controlTypeID="com.balsamiq.mockups::Button" x="483" y="75" w="166" h="45" measuredW="162" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <text>Create%20an%20Open%20Project</text>
       </controlProperties>
     </control>
-    <control controlID="220" controlTypeID="com.balsamiq.mockups::Button" x="596" y="75" w="189" h="45" measuredW="183" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="228" controlTypeID="com.balsamiq.mockups::Button" x="642" y="75" w="189" h="45" measuredW="180" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
-        <text>Organize%20your%20Open%20Project</text>
+        <text>Organizing%20an%20Open%20Project</text>
       </controlProperties>
     </control>
-    <control controlID="221" controlTypeID="com.balsamiq.mockups::Button" x="779" y="75" w="76" h="45" measuredW="74" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="229" controlTypeID="com.balsamiq.mockups::Button" x="825" y="75" w="112" h="45" measuredW="90" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>About%20us</text>
+        <color>14540253</color>
+        <text>My%20projects</text>
       </controlProperties>
     </control>
-    <control controlID="222" controlTypeID="com.balsamiq.mockups::Button" x="849" y="75" w="89" h="45" measuredW="86" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Contact%20us</text>
-      </controlProperties>
-    </control>
-    <control controlID="223" controlTypeID="com.balsamiq.mockups::LinkBar" x="155" y="715" w="-1" h="-1" measuredW="715" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>My%20projects%2C%20My%20profile%2C%20Create%20an%20Open%20Project%2C%20Organize%20your%20Open%20Project%2C%20About%20us%2C%20Contact%20us%2C%20Sign%20out</text>
-      </controlProperties>
-    </control>
-    <control controlID="224" controlTypeID="com.balsamiq.mockups::Button" x="931" y="75" w="89" h="45" measuredW="70" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="231" controlTypeID="com.balsamiq.mockups::Button" x="931" y="75" w="89" h="45" measuredW="70" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Sign%20out</text>
+      </controlProperties>
+    </control>
+    <control controlID="232" controlTypeID="com.balsamiq.mockups::Button" x="291" y="75" w="94" h="45" measuredW="86" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Ecosystem</text>
       </controlProperties>
     </control>
   </controls>

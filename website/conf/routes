@@ -2,8 +2,20 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Application.index
-
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file                           controllers.Assets.at(path="/public", file)
+
+# Pages
+GET     /                                       controllers.Application.index
+GET     /projects/new                           controllers.Application.createProject
+GET     /projects/new/preview                   controllers.Application.previewNewProject
+
+# API
+POST    /api/db/re-create-tables                controllers.api.DbAdminApi.reCreateTables
+
+POST    /api/projects                           controllers.api.ProjectApi.create
+POST    /api/projects/temp                      controllers.api.ProjectApi.saveInSession
+
+# Files
+POST    /files/project-pic/temp                 controllers.FileController.uploadTempProjectPicture
+GET     /files/project-pic/temp                 controllers.FileController.serveTempProjectPicture

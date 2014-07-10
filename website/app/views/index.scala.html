@@ -1,7 +1,26 @@
-@(message: String)
+@(isSignedIn: Boolean)
+@main("Open projects", "index") {
+<!--
+    Header
+-->
+@navbar(isSignedIn, "index")
 
-@main("Welcome to Play") {
+} {
+<!--
+    Content
+-->
+<h1>Open projects</h1>
 
-    @play20.welcome(message)
+} {
+<!--
+    Javascript
+-->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        CBR.Controllers.Index({
+            el: "#content"
+        }).run();
+    });
+</script>
 
 }

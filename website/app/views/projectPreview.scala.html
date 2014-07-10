@@ -1,0 +1,54 @@
+@(isSignedIn: Boolean, project: Project)
+@main("Project preview", "project-preview") {
+<!--
+    Header
+-->
+@navbar(isSignedIn, "project-preview")
+
+} {
+<!--
+    Content
+-->
+<div id="for-background">
+    <div class="new-project-pic"></div>
+
+    <h1><a href="@project.homepageUrl" target="_blank">@project.title</a></h1>
+
+    <div class="centered-contents">
+        @if(project.locality.isDefined) {
+        <span>@project.locality.get,</span>
+        }
+        @defining(project.country.getOrElse(Country.Global)) { country =>
+        <span>@country.name</span>
+        }
+    </div>
+
+    <div id="description">@Html(project.getDescriptionForWeb)</div>
+
+    <div class="centered-contents">
+        <a id="go-to-link" href="@project.homepageUrl" target="_blank">Go to project homepage</a></h1>
+    </div>
+</div>
+
+<div class="centered-contents">
+    <button id="edit" class="btn btn-default">
+        <span class="glyphicon glyphicon-chevron-left"></span> Edit
+    </button><!--
+
+ --><button id="next" class="btn btn-primary">
+        Next <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
+</div>
+} {
+<!--
+    Javascript
+-->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        CBR.Controllers.PreviewNewProject({
+            el: "#content"
+        }).run();
+    });
+</script>
+
+}

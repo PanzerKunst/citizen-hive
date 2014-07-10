@@ -1,0 +1,55 @@
+#create-project {
+  #content {
+    .new-project-pic {
+      @include medium-screen {
+        max-width: $field-width + $space-between-fields + $field-width;
+      }
+    }
+
+    form {
+      margin-top: $line-height-computed;
+    }
+
+    .form-groups {
+      @include clearfix;
+
+      // To center the form
+      margin: auto;
+
+      width: 100%;
+
+      .form-group {
+        width: 100%;
+      }
+
+      @include medium-screen {
+        width: $field-width + $space-between-fields + $field-width;
+
+        .form-group {
+          width: $field-width;
+        }
+      }
+
+      &.wide {
+        max-width: $field-width + $space-between-fields + $field-width;
+
+        .form-group {
+          width: 100%;
+
+          @include medium-screen {
+            float: none;  // We want fields below each other on all resolutions
+            max-width: $field-width + $space-between-fields + $field-width;
+
+            // To avoid the default margin-right of odd form items
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    #upload-btn {
+      float: right;
+      margin: 0.5em 0.5em 0 0;
+    }
+  }
+}

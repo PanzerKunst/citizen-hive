@@ -1,0 +1,55 @@
+html,
+body {
+  // For footer at the bottom
+  height: 100%;
+}
+
+footer {
+  // For footer at the bottom
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  background-color: $alternate-bg-colour;
+  color: white;
+
+  text-align: center;
+
+  @include large-screen {
+    font-size: $font-size-body-large-screen;
+  }
+
+  > a,
+  > a:visited,
+  > a:hover,
+  > a:focus {
+    display: inline-block;
+    padding: 0.45em 1em 0.55em 1em;
+
+    color: white;
+
+    width: 100%;
+
+    @include medium-screen {
+      width: auto;
+    }
+  }
+}
+
+#container {
+  // For footer at the bottom
+  min-height: 100%;
+  position: relative;
+}
+
+$footer-item-height: 2.5em;
+$footer-item-count: 6;
+
+#content {
+  padding-bottom: $footer-item-height * ($footer-item-count + 1);
+
+  @include medium-screen {
+    padding-bottom: $footer-item-height * 2;
+  }
+}

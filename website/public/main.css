@@ -1,0 +1,429 @@
+html:after {
+  content: "js-breakpoints-getComputedStyleTest";
+  visibility: hidden;
+  position: absolute;
+  clip: rect(0 0 0 0); }
+
+@font-face {
+  font-family: 'Oxygen';
+  src: url("fonts/oxygen/Oxygen.otf"); }
+@font-face {
+  font-family: 'Oxygen';
+  src: url("fonts/oxygen/Oxygen-Bold.otf");
+  font-weight: bold; }
+/* @font-face {
+  font-family: 'Open-Sans';
+  src: url("fonts/open-sans/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: 'Open-Sans';
+  src: url("fonts/open-sans/OpenSans-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Open-Sans";
+  src: url("fonts/open-sans/OpenSans-Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Open-Sans";
+  src: url("fonts/open-sans/OpenSans-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Source-Sans-Pro';
+  src: url("fonts/source-sans-pro/SourceSansPro-Regular.otf");
+}
+@font-face {
+  font-family: 'Source-Sans-Pro';
+  src: url("fonts/source-sans-pro/SourceSansPro-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Source-Sans-Pro";
+  src: url("fonts/source-sans-pro/SourceSansPro-It.otf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Source-Sans-Pro";
+  src: url("fonts/source-sans-pro/SourceSansPro-BoldIt.otf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Clear-Sans';
+  src: url("fonts/clear-sans/ClearSans-Regular.ttf");
+}
+@font-face {
+  font-family: 'Clear-Sans';
+  src: url("fonts/clear-sans/ClearSans-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Clear-Sans";
+  src: url("fonts/clear-sans/ClearSans-Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Clear-Sans";
+  src: url("fonts/clear-sans/ClearSans-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Fira-sans';
+  src: url("fonts/fira-sans/FiraSansOT-Regular.otf");
+}
+@font-face {
+  font-family: 'Fira-sans';
+  src: url("fonts/fira-sans/FiraSansOT-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Fira-sans";
+  src: url("fonts/fira-sans/FiraSansOT-RegularItalic.otf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Fira-sans";
+  src: url("fonts/fira-sans/FiraSansOT-BoldItalic.otf");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Karla';
+  src: url("fonts/karla/Karla-Regular.ttf");
+}
+@font-face {
+  font-family: 'Karla';
+  src: url("fonts/karla/Karla-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/karla/Karla-Italic.ttf");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/karla/Karla-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic;
+} */
+@font-face {
+  font-family: 'Roboto';
+  src: url("fonts/roboto/Roboto-Regular.ttf"); }
+@font-face {
+  font-family: 'Roboto';
+  src: url("fonts/roboto/Roboto-Bold.ttf");
+  font-weight: bold; }
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-Italic.ttf");
+  font-style: italic; }
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/roboto/Roboto-BoldItalic.ttf");
+  font-weight: bold;
+  font-style: italic; }
+#content {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 55em;
+  padding-left: 1em;
+  padding-right: 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.lt-ie9 #content {
+  width: 900px;
+  padding-left: 30px;
+  padding-right: 30px; }
+
+img {
+  max-width: 100%; }
+
+html {
+  overflow-y: scroll; }
+  @media screen and (min-width: 39.5em) {
+    html:after {
+      content: "GLOBAL_MEDIUM_SCREEN_BREAKPOINT";
+      visibility: hidden;
+      position: absolute;
+      clip: rect(0 0 0 0); }
+    html .js-breakpoints-GLOBAL_MEDIUM_SCREEN_BREAKPOINT {
+      position: absolute; } }
+  @media screen and (min-width: 49.5em) {
+    html:after {
+      content: "GLOBAL_LARGE_SCREEN_BREAKPOINT";
+      visibility: hidden;
+      position: absolute;
+      clip: rect(0 0 0 0); }
+    html .js-breakpoints-GLOBAL_LARGE_SCREEN_BREAKPOINT {
+      position: absolute; } }
+
+body {
+  /* TODO background-color: $bgColor;
+  background: url('images/bg-content.png') repeat; */
+  font-family: "Roboto", sans-serif; }
+
+#content {
+  /* TODO a:hover,
+  a:focus {
+    color: $actionColor;
+  } */ }
+  #content h1,
+  #content h2 {
+    text-align: center;
+    text-rendering: optimizelegibility;
+    font-smoothing: antialiased; }
+  #content h1 {
+    padding: 0 0 20px 0;
+    margin: 0;
+    font-family: "Oxygen", sans-serif;
+    font-size: 30px;
+    font-weight: bold; }
+    @media screen and (min-width: 49.5em) {
+      #content h1 {
+        font-size: 36px;
+        padding-bottom: 20px; } }
+  #content h2 {
+    margin: 10px 0 10px 0;
+    font-family: "Oxygen", sans-serif;
+    font-size: 18px; }
+    @media screen and (min-width: 49.5em) {
+      #content h2 {
+        font-size: 24px; } }
+  #content p,
+  #content ul,
+  #content ol,
+  #content form {
+    margin-bottom: 20px; }
+  #content p,
+  #content span,
+  #content li,
+  #content a,
+  #content label {
+    line-height: 1.75em; }
+  #content p {
+    text-align: justify; }
+  #content li {
+    margin-bottom: 10px; }
+  #content a,
+  #content a:visited {
+    text-decoration: none;
+    cursor: pointer; }
+  #content a,
+  #content span {
+    display: inline-block; }
+  #content textarea {
+    resize: vertical;
+    height: 8em; }
+
+.mdnz-polyfill {
+  display: none; }
+
+.list-header {
+  margin-bottom: 10px; }
+
+.centered-contents {
+  text-align: center; }
+
+.data-loading {
+  background-image: url("images/loading.gif");
+  width: 48px;
+  height: 48px;
+  margin: 0 auto; }
+  .data-loading.small {
+    background-image: url("images/spinner_16x16.gif");
+    width: 16px;
+    height: 16px; }
+
+.alert.floating {
+  position: fixed;
+  left: 50%;
+  margin-top: -2.5em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  padding: 3px 7px 4px 7px;
+  border-radius: 3px;
+  text-align: center;
+  display: none; }
+
+.other-form-error {
+  display: none;
+  font-style: italic;
+  font-size: 13px;
+  color: #a94442;
+  text-align: center; }
+
+html,
+body {
+  height: 100%; }
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #222222;
+  color: white;
+  text-align: center; }
+  @media screen and (min-width: 49.5em) {
+    footer {
+      font-size: 16px; } }
+  footer > a,
+  footer > a:visited,
+  footer > a:hover,
+  footer > a:focus {
+    display: inline-block;
+    padding: 0.45em 1em 0.55em 1em;
+    color: white;
+    width: 100%; }
+    @media screen and (min-width: 39.5em) {
+      footer > a,
+      footer > a:visited,
+      footer > a:hover,
+      footer > a:focus {
+        width: auto; } }
+
+#container {
+  min-height: 100%;
+  position: relative; }
+
+#content {
+  padding-bottom: 17.5em; }
+  @media screen and (min-width: 39.5em) {
+    #content {
+      padding-bottom: 5em; } }
+
+#content form .form-group {
+  width: 20em; }
+  @media screen and (min-width: 39.5em) {
+    #content form .form-group {
+      float: left; } }
+  @media screen and (min-width: 39.5em) {
+    #content form .form-group:nth-child(odd) {
+      margin-right: 2em; } }
+  #content form .form-group > label,
+  #content form .form-group > input,
+  #content form .form-group > select,
+  #content form .form-group > textarea {
+    display: block;
+    width: 100%; }
+  #content form .form-group > label {
+    margin-bottom: 0; }
+    #content form .form-group > label.mdnz-polyfill {
+      display: none; }
+#content form .field-error {
+  display: none;
+  font-style: italic;
+  font-size: 13px;
+  color: #a94442;
+  margin-bottom: 0; }
+#content .check-or-radio {
+  display: table-row; }
+  #content .check-or-radio > div {
+    display: table-cell;
+    vertical-align: middle; }
+    #content .check-or-radio > div > input {
+      margin-right: 0.5em; }
+    #content .check-or-radio > div > label {
+      margin: 0;
+      font-weight: normal; }
+#content .submit-wrapper {
+  padding-top: 20px; }
+  #content .submit-wrapper > [type=submit] {
+    display: block;
+    margin: auto; }
+
+.new-project-pic {
+  margin: auto;
+  background-image: url(/files/project-pic/temp);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #777777; }
+  .new-project-pic.loading {
+    background-image: url(/assets/images/loading.gif);
+    background-size: auto;
+    background-color: #fff; }
+
+html {
+  font-size: 14px; }
+
+.navbar {
+  margin-bottom: 0; }
+
+.container-fluid > .navbar-collapse,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container > .navbar-header {
+  margin-left: 0;
+  margin-right: 0; }
+
+.navbar-toggle {
+  border: none;
+  margin-right: 7px; }
+
+@media screen and (min-width: 49.5em) {
+  .modal-body > p {
+    font-size: 16px; } }
+
+.qq-upload-button-hover {
+  background: none repeat scroll 0 0 white; }
+
+@media screen and (min-width: 39.5em) {
+  #create-project #content .new-project-pic {
+    max-width: 42em; } }
+#create-project #content form {
+  margin-top: 20px; }
+#create-project #content .form-groups {
+  margin: auto;
+  width: 100%; }
+  #create-project #content .form-groups:after {
+    content: "";
+    display: table;
+    clear: both; }
+  #create-project #content .form-groups .form-group {
+    width: 100%; }
+  @media screen and (min-width: 39.5em) {
+    #create-project #content .form-groups {
+      width: 42em; }
+      #create-project #content .form-groups .form-group {
+        width: 20em; } }
+  #create-project #content .form-groups.wide {
+    max-width: 42em; }
+    #create-project #content .form-groups.wide .form-group {
+      width: 100%; }
+      @media screen and (min-width: 39.5em) {
+        #create-project #content .form-groups.wide .form-group {
+          float: none;
+          max-width: 42em;
+          margin-right: 0; } }
+#create-project #content #upload-btn {
+  float: right;
+  margin: 0.5em 0.5em 0 0; }
+
+#project-preview #content #for-background {
+  background-color: #eeeeee; }
+  @media screen and (min-width: 49.5em) {
+    #project-preview #content #for-background {
+      font-size: 16px; } }
+#project-preview #content > .centered-contents {
+  margin-top: 20px; }
+#project-preview #content h1 {
+  padding-bottom: 0; }
+#project-preview #content #description {
+  padding: 1em;
+  text-align: justify; }
+#project-preview #content #go-to-link {
+  font-size: 20px;
+  margin-bottom: 20px; }
+#project-preview #content #edit {
+  margin-right: 2em; }

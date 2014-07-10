@@ -1,0 +1,24 @@
+$action-colour: rgb(105, 0, 255);
+$alternate-bg-colour: $gray-darker;
+
+$page-side-padding: 1em;
+
+$line-height-project: 1.75em;
+
+$field-width: 20em;
+$space-between-fields: 2em;
+
+$medium-screen-min-width: $page-side-padding + $field-width + $space-between-fields + $field-width + $page-side-padding; // 44em
+$large-screen-min-width: 55em; // 55em @ 14px = 768px
+
+$strange-em-difference-for-medium-screen-mq-breakpoint: 4.5em;
+$strange-em-difference-for-large-screen-mq-breakpoint: 5.5em;
+
+$medium-screen-mq-breakpoint: $medium-screen-min-width - $strange-em-difference-for-medium-screen-mq-breakpoint;
+$large-screen-mq-breakpoint: $large-screen-min-width - $strange-em-difference-for-large-screen-mq-breakpoint;
+
+$sprite-url: 'images/sprite';
+
+$font-size-body-large-screen: 16px;
+
+$font-size-input-error: ($font-size-base + $font-size-small) / 2;

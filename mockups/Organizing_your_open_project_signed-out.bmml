@@ -1,136 +1,144 @@
-<mockup version="1.0" skin="sketch" measuredW="1024" measuredH="2129" mockupW="1024" mockupH="2129">
+<mockup version="1.0" skin="sketch" measuredW="1024" measuredH="2823" mockupW="1024" mockupH="2823">
   <controls>
-    <control controlID="83" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1024" h="2129" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="0" y="0" w="1024" h="2823" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Organizing%20your%20Open%20Project%0Ahttp%3A//citizenhive.se/open-projects/organize</text>
+        <text>Organizing%20your%20Open%20Project%0Ahttp%3A//openprojects.citizenhive.se/organize</text>
       </controlProperties>
     </control>
-    <control controlID="89" controlTypeID="com.balsamiq.mockups::ModalScreen" x="0" y="2065" w="1024" h="37" measuredW="320" measuredH="240" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::ModalScreen" x="0" y="2765" w="1024" h="37" measuredW="320" measuredH="240" zOrder="1" locked="false" isInGroup="-1"/>
     <control controlID="92" controlTypeID="com.balsamiq.mockups::ModalScreen" x="0" y="71" w="1024" h="49" measuredW="320" measuredH="240" zOrder="2" locked="false" isInGroup="-1"/>
-    <control controlID="106" controlTypeID="com.balsamiq.mockups::Button" x="859" y="75" w="76" h="45" measuredW="74" measuredH="27" zOrder="5" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>About%20us</text>
-      </controlProperties>
-    </control>
-    <control controlID="107" controlTypeID="com.balsamiq.mockups::Button" x="929" y="75" w="89" h="45" measuredW="86" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Contact%20us</text>
-      </controlProperties>
-    </control>
-    <control controlID="114" controlTypeID="com.balsamiq.mockups::Image" x="0" y="69" w="117" h="51" measuredW="77" measuredH="79" zOrder="7" locked="false" isInGroup="-1">
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::Image" x="0" y="69" w="117" h="51" measuredW="77" measuredH="79" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Citizen%20Hive</text>
       </controlProperties>
     </control>
-    <control controlID="180" controlTypeID="com.balsamiq.mockups::LinkBar" x="333" y="2073" w="-1" h="-1" measuredW="358" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Sign%20in%2C%20Create%20an%20Open%20Project%2C%20About%20us%2C%20Contact%20us</text>
-      </controlProperties>
-    </control>
-    <control controlID="240" controlTypeID="com.balsamiq.mockups::Button" x="676" y="75" w="189" h="45" measuredW="183" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
-      <controlProperties>
-        <color>14540253</color>
-        <text>Organize%20your%20Open%20Project</text>
-      </controlProperties>
-    </control>
-    <control controlID="241" controlTypeID="com.balsamiq.mockups::Button" x="517" y="75" w="166" h="45" measuredW="162" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
-      <controlProperties>
-        <color>16777215</color>
-        <text>Create%20an%20Open%20Project</text>
-      </controlProperties>
-    </control>
-    <control controlID="242" controlTypeID="com.balsamiq.mockups::Title" x="195" y="135" w="635" h="-1" measuredW="519" measuredH="50" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="242" controlTypeID="com.balsamiq.mockups::Title" x="195" y="135" w="635" h="-1" measuredW="519" measuredH="50" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Organizing%20your%20Open%20Project</text>
       </controlProperties>
     </control>
-    <control controlID="243" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="200" w="539" h="36" measuredW="200" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="243" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="200" w="539" h="91" measuredW="200" measuredH="80" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Citizen%20Hive%20doesn%27t%20constrain%20you%20in%20any%20way%20on%20how%20to%20organize%20your%20Open%20Project%2C%20but%20we%20can%20give%20your%20a%20few%20recommendations.</text>
+        <text>Citizen%20Hive%20doesn%27t%20constrain%20you%20in%20any%20way%20on%20how%20to%20organize%20your%20Open%20Project%2C%20but%20we%20can%20give%20your%20a%20few%20recommendations.%0A%20%0AYou%20are%20very%20welcome%20to%20provide%20feedback%20on%20these%20recommendations%2C%20either%20by%20writing%20a%20comment%20%28see%20bottom%20of%20the%20page%29%2C%20or%20by%20%5Bsending%20us%20an%20email%5D.</text>
       </controlProperties>
     </control>
-    <control controlID="244" controlTypeID="com.balsamiq.mockups::SubTitle" x="243" y="331" w="-1" h="-1" measuredW="294" measuredH="33" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="244" controlTypeID="com.balsamiq.mockups::SubTitle" x="243" y="379" w="-1" h="-1" measuredW="294" measuredH="33" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Overall%20project%20organization</text>
       </controlProperties>
     </control>
-    <control controlID="245" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="374" w="539" h="68" measuredW="200" measuredH="80" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="245" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="422" w="539" h="68" measuredW="200" measuredH="80" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <text>We%20organize%20our%20Open%20Projects%20as%20Facebook%20groups.%0A%20%0ATo%20create%20a%20new%20group%20on%20Facebook%2C%20click%20on%20%22Create%20group%22%2C%20it%27s%20on%20the%20left%20of%20your%20News%20Feed%3A</text>
       </controlProperties>
     </control>
-    <control controlID="246" controlTypeID="com.balsamiq.mockups::Image" x="424" y="442" w="-1" h="-1" measuredW="176" measuredH="407" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="246" controlTypeID="com.balsamiq.mockups::Image" x="424" y="490" w="-1" h="-1" measuredW="176" measuredH="407" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
         <src>../design/Create_group_Step_1.png</src>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="247" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="872" w="539" h="19" measuredW="200" measuredH="80" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="247" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="920" w="539" h="19" measuredW="200" measuredH="80" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <text>We%20recommend%20that%20you%20select%20either%20%22Open%22%20or%20%22Closed%22%20for%20its%20privacy%3A</text>
       </controlProperties>
     </control>
-    <control controlID="248" controlTypeID="com.balsamiq.mockups::Image" x="290" y="898" w="-1" h="-1" measuredW="445" measuredH="414" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="248" controlTypeID="com.balsamiq.mockups::Image" x="290" y="946" w="-1" h="-1" measuredW="445" measuredH="414" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <src>../design/Create_group_Step_2.png</src>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="249" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="1333" w="539" h="68" measuredW="200" measuredH="80" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="249" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="1381" w="539" h="68" measuredW="200" measuredH="80" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Once%20the%20group%20is%20created%2C%20you%20should%20add%20it%20to%20the%20Hive%21%20Head%20to%20the%20%5BCreate%20a%20project%5D%20page%20and%20use%20the%20URL%20of%20the%20Facebook%20group%20as%20the%20project%27s%20homepage.%0ATo%20keep%20things%20simple%2C%20you%20can%20also%20copy%20and%20paste%20the%20project%20description%20from%20that%20of%20the%20Facebook%20group%2C%20as%20well%20as%20use%20the%20same%20project%20image.</text>
       </controlProperties>
     </control>
-    <control controlID="250" controlTypeID="com.balsamiq.mockups::Paragraph" x="269" y="251" w="513" h="20" measuredW="200" measuredH="80" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="250" controlTypeID="com.balsamiq.mockups::Paragraph" x="269" y="299" w="513" h="20" measuredW="200" measuredH="80" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%5BOverall%20project%20organization%5D</text>
       </controlProperties>
     </control>
-    <control controlID="251" controlTypeID="com.balsamiq.mockups::RoundButton" x="251" y="255" w="10" h="10" measuredW="32" measuredH="32" zOrder="18" locked="false" isInGroup="-1">
+    <control controlID="251" controlTypeID="com.balsamiq.mockups::RoundButton" x="251" y="303" w="10" h="10" measuredW="32" measuredH="32" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="252" controlTypeID="com.balsamiq.mockups::Paragraph" x="269" y="278" w="513" h="21" measuredW="200" measuredH="80" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="252" controlTypeID="com.balsamiq.mockups::Paragraph" x="269" y="326" w="513" h="21" measuredW="200" measuredH="80" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>%5BDemocratic%20decision%20making%5D</text>
+        <text>%5BDemocratic%20virtual%20decision%20making%5D</text>
       </controlProperties>
     </control>
-    <control controlID="253" controlTypeID="com.balsamiq.mockups::RoundButton" x="251" y="281" w="10" h="10" measuredW="32" measuredH="32" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="253" controlTypeID="com.balsamiq.mockups::RoundButton" x="251" y="329" w="10" h="10" measuredW="32" measuredH="32" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="254" controlTypeID="com.balsamiq.mockups::SubTitle" x="243" y="1426" w="-1" h="-1" measuredW="300" measuredH="33" zOrder="21" locked="false" isInGroup="-1">
+    <control controlID="254" controlTypeID="com.balsamiq.mockups::SubTitle" x="243" y="1474" w="-1" h="-1" measuredW="370" measuredH="33" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Democratic%20decision-making</text>
+        <text>Democratic%20virtual%20decision-making</text>
       </controlProperties>
     </control>
-    <control controlID="255" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="1469" w="539" h="51" measuredW="200" measuredH="80" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="255" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="1517" w="539" h="51" measuredW="200" measuredH="80" zOrder="17" locked="false" isInGroup="-1">
       <controlProperties>
         <text>For%20important%20decisions%20in%20an%20Open%20Project%2C%20we%20write%20proposals%20in%20the%20style%20of%20%5BLoomio%5D.%0A%20%0AA%20proposal%20is%20made%20as%20a%20Facebook%20Question%3A</text>
       </controlProperties>
     </control>
-    <control controlID="256" controlTypeID="com.balsamiq.mockups::Image" x="261" y="1520" w="-1" h="-1" measuredW="502" measuredH="138" zOrder="23" locked="false" isInGroup="-1">
+    <control controlID="256" controlTypeID="com.balsamiq.mockups::Image" x="261" y="1568" w="-1" h="-1" measuredW="502" measuredH="138" zOrder="18" locked="false" isInGroup="-1">
       <controlProperties>
         <src>../design/Proposal_Step_1.png</src>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="257" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="1673" w="539" h="20" measuredW="200" measuredH="80" zOrder="24" locked="false" isInGroup="-1">
+    <control controlID="257" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="1721" w="539" h="20" measuredW="200" measuredH="80" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <text>A%20proposal%20always%20has%20those%204%20possible%20choices%3A%20Yes%2C%20No%2C%20Abstain%20and%20Block%3A</text>
       </controlProperties>
     </control>
-    <control controlID="258" controlTypeID="com.balsamiq.mockups::Image" x="261" y="1693" w="-1" h="-1" measuredW="502" measuredH="255" zOrder="25" locked="false" isInGroup="-1">
+    <control controlID="258" controlTypeID="com.balsamiq.mockups::Image" x="261" y="1741" w="-1" h="-1" measuredW="502" measuredH="255" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <src>../design/Proposal_Step_2.png</src>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="259" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="1963" w="539" h="87" measuredW="200" measuredH="80" zOrder="26" locked="false" isInGroup="-1">
+    <control controlID="259" controlTypeID="com.balsamiq.mockups::Paragraph" x="243" y="2011" w="539" h="121" measuredW="200" measuredH="80" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Any%20project%20member%20can%20vote%20on%20the%20proposal%20by%20answering%20the%20question.%20The%20proposal%20is%20accepted%20if%20there%20is%20a%20majority%20of%20people%20in%20favor%2C%20and%20obviously%20of%20nobody%20blocks%20it.%0A%20%0AWhen%20we%20happen%20to%20have%20missing%20votes%2C%20we%20mention%20%28aka%20%22ping%22%29%20the%20corresponding%20people%20in%20a%20comment%20to%20this%20Facebook%20question%2C%20and%20ask%20them%20specifically%20to%20vote%20on%20the%20proposal.</text>
+        <text>Any%20project%20member%20can%20vote%20on%20the%20proposal%20by%20answering%20the%20question.%20The%20proposal%20is%20accepted%20if%20there%20is%20a%20majority%20of%20people%20in%20favor%2C%20and%20obviously%20of%20nobody%20blocks%20it.%0A%20%0AYou%20may%20want%20to%20set%20a%20deadline%20for%20voting.%0A%20%0AWhen%20we%20happen%20to%20have%20missing%20votes%2C%20we%20mention%20%28aka%20%22ping%22%29%20the%20corresponding%20people%20in%20a%20comment%20to%20this%20Facebook%20question%2C%20and%20ask%20them%20specifically%20to%20vote%20on%20the%20proposal.</text>
+      </controlProperties>
+    </control>
+    <control controlID="260" controlTypeID="com.balsamiq.mockups::LinkBar" x="442" y="2772" w="-1" h="-1" measuredW="141" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Footer%2C%20links%2C%20here</text>
+      </controlProperties>
+    </control>
+    <control controlID="264" controlTypeID="com.balsamiq.mockups::Button" x="479" y="73" w="94" h="45" measuredW="86" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Ecosystem</text>
+      </controlProperties>
+    </control>
+    <control controlID="265" controlTypeID="com.balsamiq.mockups::Button" x="567" y="73" w="112" h="45" measuredW="106" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Open%20Projects</text>
+      </controlProperties>
+    </control>
+    <control controlID="266" controlTypeID="com.balsamiq.mockups::Button" x="672" y="73" w="166" h="45" measuredW="162" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Create%20an%20Open%20Project</text>
+      </controlProperties>
+    </control>
+    <control controlID="267" controlTypeID="com.balsamiq.mockups::Button" x="831" y="73" w="189" h="45" measuredW="180" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>14540253</color>
+        <text>Organizing%20an%20Open%20Project</text>
+      </controlProperties>
+    </control>
+    <control controlID="268" controlTypeID="com.balsamiq.mockups::Image" x="243" y="2159" w="539" h="583" measuredW="612" measuredH="662" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./Disqus.png</src>
+        <text/>
       </controlProperties>
     </control>
   </controls>

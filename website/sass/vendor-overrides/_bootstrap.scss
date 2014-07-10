@@ -1,0 +1,31 @@
+html {
+  font-size: $font-size-base;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+// To avoid the bug of horizontal scrollbar when navbar is in low-rez mode because of margins of "-15px"
+.container-fluid > .navbar-collapse,
+.container-fluid > .navbar-header,
+.container > .navbar-collapse,
+.container > .navbar-header {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.navbar-toggle {
+  border: none;
+
+  // Moved a bit more to the right
+  margin-right: 7px;
+}
+
+.modal-body {
+  > p {
+    @include large-screen {
+      font-size: $font-size-body-large-screen;
+    }
+  }
+}

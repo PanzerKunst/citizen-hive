@@ -2,9 +2,9 @@ Upgrade SBT
 Edit PATH and remove the path to SBT added at the end (it's now duplicated)
 
 Upgrade Play Framework
-Edit PATH and Update path to Play in PATH
+Edit PATH and Update path to Play/Activator in PATH
 
 Open a terminal, CD to project root
-Run "play new website"
+Run "activator new website play-scala"
 
-Edit website/build.sbt with dependencies
+Edit website/build.sbt with dependencies updated to the latest version

@@ -1,0 +1,73 @@
+#content {
+  form {
+    .form-group {
+      width: $field-width;
+
+      @include medium-screen {
+        float: left;
+      }
+
+      &:nth-child(odd) {
+        @include medium-screen {
+          margin-right: $space-between-fields;
+        }
+      }
+
+      > label,
+      > input,
+      > select,
+      > textarea {
+        display: block;
+        width: 100%;
+      }
+
+      > label {
+        margin-bottom: 0;
+
+        &.mdnz-polyfill {
+          display: none;
+        }
+      }
+    }
+
+    .field-error {
+      display: none;
+
+      font-style: italic;
+      font-size: $font-size-input-error;
+      color: $state-danger-text;
+
+      margin-bottom: 0;
+    }
+  }
+
+  .check-or-radio {
+    // For checkbox and label to be vertically centered
+    display: table-row;
+
+    > div {
+      display: table-cell;
+      vertical-align: middle;
+
+      > input {
+        margin-right: 0.5em;
+      }
+
+      > label {
+        // To align vertically with the radio/checkbox
+        margin: 0;
+
+        font-weight: normal;
+      }
+    }
+  }
+
+  .submit-wrapper {
+    padding-top: $line-height-computed;
+
+    > [type=submit] {
+      display: block;
+      margin: auto;
+    }
+  }
+}

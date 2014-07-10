@@ -1,0 +1,80 @@
+@(isSignedIn: Boolean, allCountries: List[Country])
+@main("New open project", "create-project") {
+<!--
+    Header
+-->
+@navbar(isSignedIn, "create-project")
+
+} {
+<!--
+    Content
+-->
+<div id="fine-uploader"></div>
+<div class="new-project-pic">
+    <a id="upload-btn" class="btn btn-default btn-xs">Change picture</a>
+</div>
+
+<form role="form">
+    <section class="form-groups wide">
+        <div class="form-group">
+            <label for="title">Project title <span>*</span></label><!--
+         --><input type="text" id="title" class="form-control" maxlength="64" data-min-length="2" />
+
+            <p class="field-error" data-check="empty"></p>
+            <p class="field-error" data-check="min-length">Two characters minimun</p>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description <span>*</span></label><!--
+         --><textarea id="description" class="form-control" maxlength="4096"></textarea>
+
+            <p class="field-error" data-check="max-length">4096 characters maximum</p>
+        </div>
+
+        <div class="form-group">
+            <label for="homepage-url">URL of the homepage <span>*</span></label><!--
+         --><input type="text" id="homepage-url" class="form-control" maxlength="64" data-min-length="7" />
+
+            <p class="field-error" data-check="empty"></p>
+            <p class="field-error" data-check="min-length">Seven characters minimun</p>
+        </div>
+    </section>
+
+    <section class="form-groups">
+        <div class="form-group">
+            <label for="country">Country <span>*</span></label><!--
+         --><select id="country" class="form-control">
+                <option value="@Country.Global.id">@Country.Global.name</option>
+                <option disabled>----</option>
+                @for(country <- allCountries) {
+                <option value="@country.id">@country.name</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="locality">Locality</label><!--
+            Disabled by default because the default country is Global
+         --><input type="text" id="locality" class="form-control" maxlength="64" data-min-length="2" disabled />
+
+            <p class="field-error" data-check="min-length">Two characters minimun</p>
+        </div>
+    </section>
+
+    <div class="submit-wrapper">
+        <button type="submit" class="btn btn-primary" data-loading-text="Submitting...">Preview</button>
+    </div>
+</form>
+} {
+<!--
+    Javascript
+-->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        CBR.Controllers.CreateProject({
+            el: "#content"
+        }).run();
+    });
+</script>
+
+}
