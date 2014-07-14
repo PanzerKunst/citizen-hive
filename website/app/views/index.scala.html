@@ -1,4 +1,4 @@
-@(isSignedIn: Boolean)
+@(isSignedIn: Boolean, projects: List[Project])
 @main("Open projects", "index") {
 <!--
     Header
@@ -9,7 +9,28 @@
 <!--
     Content
 -->
-<h1>Open projects</h1>
+<ul>
+    @for(project <- projects) {<!--
+ --><li data-id="@project.id">
+        <div class="project-pic loading"></div>
+
+        <h2><a href="@project.homepageUrl" target="_blank">@project.title</a></h2>
+
+        <div class="centered-contents">
+            @if(project.locality.isDefined) {
+            <span>@project.locality.get,</span>
+            }
+            @defining(project.country.getOrElse(Country.Global)) { country =>
+            <span>@country.name</span>
+            }
+        </div>
+
+        <div class="description">
+            <p>@Html(project.getDescriptionForWeb)</p>
+        </div>
+    </li><!--
+ -->}
+</ul>
 
 } {
 <!--

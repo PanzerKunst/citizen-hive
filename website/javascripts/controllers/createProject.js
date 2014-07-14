@@ -1,4 +1,6 @@
-CBR.Controllers.CreateProject = P(CBR.Controllers.NewProjectPic, function (c, newProjectPic) {
+CBR.Controllers.CreateProject = P(CBR.Controllers.CitizenHiveOpenProjectsBase, function (c, chopBase) {
+    c.projectPicMaxFileSize = 3 * 1024 * 1024;  // 3 MB
+
     c.run = function () {
         this._initElements();
         this._initValidation();
@@ -6,9 +8,11 @@ CBR.Controllers.CreateProject = P(CBR.Controllers.NewProjectPic, function (c, ne
     };
 
     c._initElements = function () {
-        newProjectPic.initElements.call(this);
+        chopBase.initElements.call(this);
 
         this.$form = $("form");
+        this.$newProjectPic = $(".project-pic.new");
+        this.$fileUploadError = $(".other-form-error");
         this.$title = $("#title");
         this.$description = $("#description");
         this.$homepageUrl = $("#homepage-url");
@@ -16,21 +20,30 @@ CBR.Controllers.CreateProject = P(CBR.Controllers.NewProjectPic, function (c, ne
         this.$locality = $("#locality");
         this.$submitBtn = $("[type=submit]");
 
+        this.initNewProjectPic(this.$newProjectPic);
+
         $("#fine-uploader").fineUploader({
             uploaderType: 'basic',
             button: $("#upload-btn")[0],
             request: {
                 endpoint: '/files/project-pic/temp'
+            },
+            multiple: false,
+            validation: {
+                allowedExtensions: ['jpeg', 'jpg', 'png'],
+                sizeLimit: this.projectPicMaxFileSize
             }
         })
-            .on('upload', function (fileId, fileName) {
+            .on('upload', function (e, fileId, fileName) {
+                this.$fileUploadError.hide();
                 this.$newProjectPic.addClass("loading");
             }.bind(this))
-            .on('error', function (fileId, fileName, errorReason, xhr) {
-                alert("Upload error :(");
-            })
-            .on('complete', function (fileId, fileName, responseJSON, xhr) {
-                if (xhr.success) {
+            .on('error', function (e, fileId, fileName, errorReason, xhr) {
+                this.$fileUploadError.html(errorReason);
+                this.$fileUploadError.show();
+            }.bind(this))
+            .on('complete', function (e, fileId, fileName, responseJSON, xhr) {
+                if (responseJSON.success) {
                     this.$newProjectPic.removeClass("loading")
                         .css("background-image", "url(/files/project-pic/temp?time=" + new Date().getTime() + ")");
                 }
@@ -52,7 +65,7 @@ CBR.Controllers.CreateProject = P(CBR.Controllers.NewProjectPic, function (c, ne
     };
 
     c._initEvents = function () {
-        newProjectPic.initEvents.call(this);
+        this.resizeProjectPicOnResize(this.$newProjectPic);
 
         this.$countrySelect.change($.proxy(this._onCountryChange, this));
         this.$form.submit($.proxy(this._doSubmit, this));
@@ -98,7 +111,7 @@ CBR.Controllers.CreateProject = P(CBR.Controllers.NewProjectPic, function (c, ne
                 data: JSON.stringify(project)
             }).done(function (data, textStatus, jqXHR) {
                     location.href = "/projects/new/preview";
-                }.bind(this)
+                }
             ).fail(function (jqXHR, textStatus, errorThrown) {
                     this.$submitBtn.button('reset');
                     alert("AJAX fail :(");

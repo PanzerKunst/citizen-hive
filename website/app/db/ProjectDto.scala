@@ -3,7 +3,7 @@ package db
 import java.util.Date
 
 import anorm._
-import models.Project
+import models.{Account, Country, Project}
 import play.api.Logger
 import play.api.Play.current
 import play.api.db.DB
@@ -13,63 +13,131 @@ object ProjectDto {
     DB.withConnection {
       implicit c =>
 
+        var countryIdForQuery = "NULL"
+        val countryId = project.country.get.id
+        if (countryId != Country.Global.id) {
+          countryIdForQuery = countryId.toString
+        }
+
         var localityForQuery = "NULL"
-        if (project.locality.isDefined && project.locality.get != "")
+        if (project.locality.isDefined && project.locality.get != "") {
           localityForQuery = "'" + DbUtil.safetize(project.locality.get) + "'"
+        }
 
         val query = """
-               insert into open_project(account_id, title, description, homepage_url, country_id, locality, creation_timestamp)
-          values(""" + project.owner.get.id + """, '""" +
-          DbUtil.safetize(project.title) + """', '""" +
-          project.description + """', '""" +  // Already safetized
+               insert into open_project(owner_id, title, description, homepage_url, country_id, locality, creation_timestamp)
+          values(""" + project.owner.get.id.get + """, '""" +
+          DbUtil.safetize(project.title) + """',
+          {description}, '""" +
           DbUtil.safetize(project.homepageUrl) + """', """ +
-          project.country.get.id + """, '""" +
-          localityForQuery + """', """ +
+          countryIdForQuery + """, """ +
+          localityForQuery + """, """ +
           new Date().getTime + """);"""
 
         Logger.info("ProjectDto.create():" + query)
 
-        SQL(query).executeInsert()
+        /* We need to use "on" otherwise Play crashes if "project.description" is too long. Also, it's useful to handle
+        carriage returns */
+        SQL(query).on(
+          "description" -> project.description
+        ).executeInsert()
     }
   }
 
-  /* TODO
-  def getOfId(id: Long): Option[Report] = {
+  def getAll: List[Project] = {
     DB.withConnection {
       implicit c =>
 
         val query = """
-          select candidate_id, author_name, contact, is_money_in_politics_a_problem, is_supporting_amendment_to_fix_it,
-            is_opposing_citizens_united, has_previously_voted_for_convention, support_level, notes,
-            creation_timestamp, is_deleted
-          from report
-          where id = """ + id + """;"""
+          select p.id, owner_id, title, description, homepage_url, country_id, locality, creation_timestamp,
+            username, email,
+            name
+          from open_project p
+          inner join account a
+            on a.id = p.owner_id
+          left join country c
+            on c.id = p.country_id
+          order by creation_timestamp desc;"""
 
-        Logger.info("ReportDto.getOfId(" + id + "):" + query)
+        Logger.info("ProjectDto.getAll():" + query)
+
+        SQL(query)().map {
+          row =>
+            val account = row[Option[Long]]("owner_id") match {
+              case Some(ownerId) => Some(Account(Some(ownerId),
+                row[String]("username"),
+                row[String]("email")))
+
+              case None => None
+            }
+
+            val country = row[Option[Long]]("country_id") match {
+              case Some(countryId) => CountryDto.getOfId(countryId)
+              case None => None
+            }
+
+            Project(row[Option[Long]]("id"),
+              account,
+              row[String]("title"),
+              row[String]("description"),
+              row[String]("homepage_url"),
+              country,
+              row[Option[String]]("locality"),
+              row[Option[Long]]("creation_timestamp"))
+        }.toList
+    }
+  }
+
+  def getOfId(id: Long): Option[Project] = {
+    DB.withConnection {
+      implicit c =>
+
+        val query = """
+          select owner_id, title, description, homepage_url, country_id, locality, creation_timestamp,
+            username, email,
+            name
+          from open_project p
+          inner join account a
+            on a.id = p.owner_id
+          left join country c
+            on c.id = p.country_id
+          where p.id = """ + id + """;"""
+
+        Logger.info("ProjectDto.getOfId(" + id + "):" + query)
 
         SQL(query).apply().headOption match {
           case Some(row) =>
+            val account = row[Option[Long]]("owner_id") match {
+              case Some(ownerId) => Some(Account(Some(ownerId),
+                row[String]("username"),
+                row[String]("email")))
+
+              case None => None
+            }
+
+            val country = row[Option[Long]]("country_id") match {
+              case Some(countryId) => CountryDto.getOfId(countryId)
+              case None => None
+            }
+
             Some(
-              Report(
-                Some(id),
-                row[Int]("candidate_id"),
-                row[String]("author_name"),
-                row[Option[String]]("contact"),
-                row[Option[Boolean]]("is_money_in_politics_a_problem"),
-                row[Option[Boolean]]("is_supporting_amendment_to_fix_it"),
-                row[Option[Boolean]]("is_opposing_citizens_united"),
-                row[Option[Boolean]]("has_previously_voted_for_convention"),
-                row[Option[String]]("support_level").getOrElse(SupportLevel.UNKNOWN.toString),
-                row[Option[String]]("notes"),
-                row[Option[Long]]("creation_timestamp"),
-                row[Boolean]("is_deleted")
-              )
+              Project(Some(id),
+                account,
+                row[String]("title"),
+                row[String]("description"),
+                row[String]("homepage_url"),
+                country,
+                row[Option[String]]("locality"),
+                row[Option[Long]]("creation_timestamp"))
             )
-          case None => None
+
+          case None =>
+            None
         }
     }
   }
 
+  /* TODO
   def getOfCandidate(candidateId: Int): List[Report] = {
     DB.withConnection {
       implicit c =>

@@ -33,7 +33,7 @@
                 @header
             </header>
 
-            <div id="content" role="main">
+            <div id="content" role="main" @if(page == "project-preview" || page == "view-project") { class="project-details" }>
                 @content
             </div>
 

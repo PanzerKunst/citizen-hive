@@ -927,7 +927,7 @@ return l(o),l(i),n},J.min=function(n,t,e){var u=1/0,o=u;if(typeof t!="function"&
 },J.take=Bt,J.head=Bt,h(J,function(n,t){var e="sample"!==t;J.prototype[t]||(J.prototype[t]=function(t,r){var u=this.__chain__,o=n(this.__wrapped__,t,r);return u||null!=t&&(!r||e&&typeof t=="function")?new Q(o,u):o})}),J.VERSION="2.4.1",J.prototype.chain=function(){return this.__chain__=true,this},J.prototype.toString=function(){return oe(this.__wrapped__)},J.prototype.value=Qt,J.prototype.valueOf=Qt,St(["join","pop","shift"],function(n){var t=ae[n];J.prototype[n]=function(){var n=this.__chain__,e=t.apply(this.__wrapped__,arguments);
 return n?new Q(e,n):e}}),St(["push","reverse","sort","unshift"],function(n){var t=ae[n];J.prototype[n]=function(){return t.apply(this.__wrapped__,arguments),this}}),St(["concat","slice","splice"],function(n){var t=ae[n];J.prototype[n]=function(){return new Q(t.apply(this.__wrapped__,arguments),this.__chain__)}}),J}var v,h=[],g=[],y=0,m=+new Date+"",b=75,_=40,d=" \t\x0B\f\xa0\ufeff\n\r\u2028\u2029\u1680\u180e\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000",w=/\b__p\+='';/g,j=/\b(__p\+=)''\+/g,k=/(__e\(.*?\)|\b__t\))\+'';/g,x=/\$\{([^\\}]*(?:\\.[^\\}]*)*)\}/g,C=/\w*$/,O=/^\s*function[ \n\r\t]+\w/,N=/<%=([\s\S]+?)%>/g,I=RegExp("^["+d+"]*0+(?=.$)"),S=/($^)/,E=/\bthis\b/,R=/['\n\r\t\u2028\u2029\\]/g,A="Array Boolean Date Function Math Number Object RegExp String _ attachEvent clearTimeout isFinite isNaN parseInt setTimeout".split(" "),D="[object Arguments]",$="[object Array]",T="[object Boolean]",F="[object Date]",B="[object Function]",W="[object Number]",q="[object Object]",z="[object RegExp]",P="[object String]",K={};
 K[B]=false,K[D]=K[$]=K[T]=K[F]=K[W]=K[q]=K[z]=K[P]=true;var L={leading:false,maxWait:0,trailing:false},M={configurable:false,enumerable:false,value:null,writable:false},V={"boolean":false,"function":true,object:true,number:false,string:false,undefined:false},U={"\\":"\\","'":"'","\n":"n","\r":"r","\t":"t","\u2028":"u2028","\u2029":"u2029"},G=V[typeof window]&&window||this,H=V[typeof exports]&&exports&&!exports.nodeType&&exports,J=V[typeof module]&&module&&!module.nodeType&&module,Q=J&&J.exports===H&&H,X=V[typeof global]&&global;!X||X.global!==X&&X.window!==X||(G=X);
-var Y=s();typeof define=="function"&&typeof define.amd=="object"&&define.amd?(G._=Y, define(function(){return Y})):H&&J?Q?(J.exports=Y)._=Y:H._=Y:G._=Y}).call(this);;/*!
+var Y=s();typeof define=="function"&&typeof define.amd=="object"&&define.amd?(G._=Y, define(function(){return Y})):H&&J?Q?(J.exports=Y)._=Y:H._=Y:G._=Y}).call(this);;(function(e){e.fn.visible=function(t,n,r){var i=e(this).eq(0),s=i.get(0),o=e(window),u=o.scrollTop(),a=u+o.height(),f=o.scrollLeft(),l=f+o.width(),c=i.offset().top,h=c+i.height(),p=i.offset().left,d=p+i.width(),v=t===true?h:c,m=t===true?c:h,g=t===true?d:p,y=t===true?p:d,b=n===true?s.offsetWidth*s.offsetHeight:true,r=r?r:"both";if(r==="both")return!!b&&m<=a&&v>=u&&y<=l&&g>=f;else if(r==="vertical")return!!b&&m<=a&&v>=u;else if(r==="horizontal")return!!b&&y<=l&&g>=f}})(jQuery);/*!
 * Fine Uploader
 *
 * Copyright 2013, Widen Enterprises, Inc. info@fineuploader.com
@@ -11964,7 +11964,20 @@ qq.FilenameEditHandler = function(s, inheritedInternalApi) {
 }(jQuery));
 
 /*! 2014-07-03 */
-;if (typeof String.prototype.startsWith !== 'function') {
+;/*
+ *	jQuery dotdotdot 1.6.16
+ *
+ *	Copyright (c) Fred Heusschen
+ *	www.frebsite.nl
+ *
+ *	Plugin website:
+ *	dotdotdot.frebsite.nl
+ *
+ *	Dual licensed under the MIT and GPL licenses.
+ *	http://en.wikipedia.org/wiki/MIT_License
+ *	http://en.wikipedia.org/wiki/GNU_General_Public_License
+ */
+!function(t,e){function n(t,e,n){var r=t.children(),o=!1;t.empty();for(var i=0,d=r.length;d>i;i++){var l=r.eq(i);if(t.append(l),n&&t.append(n),a(t,e)){l.remove(),o=!0;break}n&&n.detach()}return o}function r(e,n,i,d,l){var s=!1,c="table, thead, tbody, tfoot, tr, col, colgroup, object, embed, param, ol, ul, dl, blockquote, select, optgroup, option, textarea, script, style",u="script, .dotdotdot-keep";return e.contents().detach().each(function(){var f=this,h=t(f);if("undefined"==typeof f||3==f.nodeType&&0==t.trim(f.data).length)return!0;if(h.is(u))e.append(h);else{if(s)return!0;e.append(h),l&&e[e.is(c)?"after":"append"](l),a(i,d)&&(s=3==f.nodeType?o(h,n,i,d,l):r(h,n,i,d,l),s||(h.detach(),s=!0)),s||l&&l.detach()}}),s}function o(e,n,r,o,d){var c=e[0];if(!c)return!1;var f=s(c),h=-1!==f.indexOf(" ")?" ":"　",p="letter"==o.wrap?"":h,g=f.split(p),v=-1,w=-1,b=0,y=g.length-1;for(o.fallbackToLetter&&0==b&&0==y&&(p="",g=f.split(p),y=g.length-1);y>=b&&(0!=b||0!=y);){var m=Math.floor((b+y)/2);if(m==w)break;w=m,l(c,g.slice(0,w+1).join(p)+o.ellipsis),a(r,o)?(y=w,o.fallbackToLetter&&0==b&&0==y&&(p="",g=g[0].split(p),v=-1,w=-1,b=0,y=g.length-1)):(v=w,b=w)}if(-1==v||1==g.length&&0==g[0].length){var x=e.parent();e.detach();var T=d&&d.closest(x).length?d.length:0;x.contents().length>T?c=u(x.contents().eq(-1-T),n):(c=u(x,n,!0),T||x.detach()),c&&(f=i(s(c),o),l(c,f),T&&d&&t(c).parent().append(d))}else f=i(g.slice(0,v+1).join(p),o),l(c,f);return!0}function a(t,e){return t.innerHeight()>e.maxHeight}function i(e,n){for(;t.inArray(e.slice(-1),n.lastCharacter.remove)>-1;)e=e.slice(0,-1);return t.inArray(e.slice(-1),n.lastCharacter.noEllipsis)<0&&(e+=n.ellipsis),e}function d(t){return{width:t.innerWidth(),height:t.innerHeight()}}function l(t,e){t.innerText?t.innerText=e:t.nodeValue?t.nodeValue=e:t.textContent&&(t.textContent=e)}function s(t){return t.innerText?t.innerText:t.nodeValue?t.nodeValue:t.textContent?t.textContent:""}function c(t){do t=t.previousSibling;while(t&&1!==t.nodeType&&3!==t.nodeType);return t}function u(e,n,r){var o,a=e&&e[0];if(a){if(!r){if(3===a.nodeType)return a;if(t.trim(e.text()))return u(e.contents().last(),n)}for(o=c(a);!o;){if(e=e.parent(),e.is(n)||!e.length)return!1;o=c(e[0])}if(o)return u(t(o),n)}return!1}function f(e,n){return e?"string"==typeof e?(e=t(e,n),e.length?e:!1):e.jquery?e:!1:!1}function h(t){for(var e=t.innerHeight(),n=["paddingTop","paddingBottom"],r=0,o=n.length;o>r;r++){var a=parseInt(t.css(n[r]),10);isNaN(a)&&(a=0),e-=a}return e}if(!t.fn.dotdotdot){t.fn.dotdotdot=function(e){if(0==this.length)return t.fn.dotdotdot.debug('No element found for "'+this.selector+'".'),this;if(this.length>1)return this.each(function(){t(this).dotdotdot(e)});var o=this;o.data("dotdotdot")&&o.trigger("destroy.dot"),o.data("dotdotdot-style",o.attr("style")||""),o.css("word-wrap","break-word"),"nowrap"===o.css("white-space")&&o.css("white-space","normal"),o.bind_events=function(){return o.bind("update.dot",function(e,d){e.preventDefault(),e.stopPropagation(),l.maxHeight="number"==typeof l.height?l.height:h(o),l.maxHeight+=l.tolerance,"undefined"!=typeof d&&(("string"==typeof d||d instanceof HTMLElement)&&(d=t("<div />").append(d).contents()),d instanceof t&&(i=d)),g=o.wrapInner('<div class="dotdotdot" />').children(),g.contents().detach().end().append(i.clone(!0)).find("br").replaceWith("  <br />  ").end().css({height:"auto",width:"auto",border:"none",padding:0,margin:0});var c=!1,u=!1;return s.afterElement&&(c=s.afterElement.clone(!0),c.show(),s.afterElement.detach()),a(g,l)&&(u="children"==l.wrap?n(g,l,c):r(g,o,g,l,c)),g.replaceWith(g.contents()),g=null,t.isFunction(l.callback)&&l.callback.call(o[0],u,i),s.isTruncated=u,u}).bind("isTruncated.dot",function(t,e){return t.preventDefault(),t.stopPropagation(),"function"==typeof e&&e.call(o[0],s.isTruncated),s.isTruncated}).bind("originalContent.dot",function(t,e){return t.preventDefault(),t.stopPropagation(),"function"==typeof e&&e.call(o[0],i),i}).bind("destroy.dot",function(t){t.preventDefault(),t.stopPropagation(),o.unwatch().unbind_events().contents().detach().end().append(i).attr("style",o.data("dotdotdot-style")||"").data("dotdotdot",!1)}),o},o.unbind_events=function(){return o.unbind(".dot"),o},o.watch=function(){if(o.unwatch(),"window"==l.watch){var e=t(window),n=e.width(),r=e.height();e.bind("resize.dot"+s.dotId,function(){n==e.width()&&r==e.height()&&l.windowResizeFix||(n=e.width(),r=e.height(),u&&clearInterval(u),u=setTimeout(function(){o.trigger("update.dot")},100))})}else c=d(o),u=setInterval(function(){if(o.is(":visible")){var t=d(o);(c.width!=t.width||c.height!=t.height)&&(o.trigger("update.dot"),c=t)}},500);return o},o.unwatch=function(){return t(window).unbind("resize.dot"+s.dotId),u&&clearInterval(u),o};var i=o.contents(),l=t.extend(!0,{},t.fn.dotdotdot.defaults,e),s={},c={},u=null,g=null;return l.lastCharacter.remove instanceof Array||(l.lastCharacter.remove=t.fn.dotdotdot.defaultArrays.lastCharacter.remove),l.lastCharacter.noEllipsis instanceof Array||(l.lastCharacter.noEllipsis=t.fn.dotdotdot.defaultArrays.lastCharacter.noEllipsis),s.afterElement=f(l.after,o),s.isTruncated=!1,s.dotId=p++,o.data("dotdotdot",!0).bind_events().trigger("update.dot"),l.watch&&o.watch(),o},t.fn.dotdotdot.defaults={ellipsis:"... ",wrap:"word",fallbackToLetter:!0,lastCharacter:{},tolerance:0,callback:null,after:null,height:null,watch:!1,windowResizeFix:!0},t.fn.dotdotdot.defaultArrays={lastCharacter:{remove:[" ","　",",",";",".","!","?"],noEllipsis:[]}},t.fn.dotdotdot.debug=function(){};var p=1,g=t.fn.html;t.fn.html=function(n){return n!=e&&!t.isFunction(n)&&this.data("dotdotdot")?this.trigger("update",[n]):g.apply(this,arguments)};var v=t.fn.text;t.fn.text=function(n){return n!=e&&!t.isFunction(n)&&this.data("dotdotdot")?(n=t("<div />").text(n).html(),this.trigger("update",[n])):v.apply(this,arguments)}}}(jQuery);;if (typeof String.prototype.startsWith !== 'function') {
     String.prototype.startsWith = function (str) {
         return this.slice(0, str.length) === str;
     };
@@ -12009,7 +12022,7 @@ CBR.isBrowserLargeScreen = function () {
     s.checkMaxLength = "max-length";
     s.checkInteger = "integer";
     s.checkDecimal = "decimal";
-    s.checkUrl = "url"; // TODO
+    s.checkUrl = "url";
 
     s.init = function (options) {
         this.options = options;
@@ -12100,6 +12113,10 @@ CBR.isBrowserLargeScreen = function () {
         return this._get$error($field, this.checkDecimal);
     };
 
+    s._get$url = function ($field) {
+        return this._get$error($field, this.checkUrl);
+    };
+
     s._get$error = function ($field, checkType) {
         return $field.parent().find("p[data-check=" + checkType + "]");
     };
@@ -12136,16 +12153,20 @@ CBR.isBrowserLargeScreen = function () {
         return this._get$decimal($field).length === 1;
     };
 
-    s._isValidEmail = function (email) {
+    s._isToCheckIfUrl = function ($field) {
+        return this._get$url($field).length === 1;
+    };
+
+    s._isEmail = function (email) {
         if (email === "")
             return true;
 
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var reg = /^([a-z0-9_\-\.])+\@([a-z0-9_\-\.])+\.([a-z]{2,4})$/i;
         return reg.test(email);
     };
 
-    s._isValidUsername = function (username) {
-        var reg = /^([A-Za-z0-9_\-])+$/;
+    s._isUsername = function (username) {
+        var reg = /^([a-z0-9_\-])+$/i;
         return reg.test(username);
     };
 
@@ -12186,6 +12207,11 @@ CBR.isBrowserLargeScreen = function () {
         return reg.test(value);
     };
 
+    s._isUrl = function(url) {
+        var reg = /^((https?|ftp|irc):\/\/)?(www\d?|[a-z0-9]+)?\.[a-z0-9-]+(\:|\.)([a-z0-9.]+|(\d+)?)([/?:].*)?$/i;
+        return reg.test(url);
+    };
+
     s._validateField = function ($field, isOnBlur) {
 
         // Empty?
@@ -12211,7 +12237,7 @@ CBR.isBrowserLargeScreen = function () {
 
         // Email?
         if (this._isToCheckIfEmail($field)) {
-            if (!this._isValidEmail($field.val())) {
+            if (!this._isEmail($field.val())) {
                 this.flagInvalid($field);
                 this._slideDownErrorMessage(this._get$email($field));
                 return false;
@@ -12222,7 +12248,7 @@ CBR.isBrowserLargeScreen = function () {
 
         // Username?
         if (this._isToCheckIfUsername($field)) {
-            if (!this._isValidUsername($field.val())) {
+            if (!this._isUsername($field.val())) {
                 this.flagInvalid($field);
                 this._slideDownErrorMessage(this._get$username($field));
                 return false;
@@ -12280,6 +12306,16 @@ CBR.isBrowserLargeScreen = function () {
             this._slideUpErrorMessage(this._get$decimal($field));
         }
 
+        // URL?
+        if (this._isToCheckIfUrl($field)) {
+            if (!this._isUrl($field.val())) {
+                this.flagInvalid($field);
+                this._slideDownErrorMessage(this._get$url($field));
+                return false;
+            }
+            this._slideUpErrorMessage(this._get$url($field));
+        }
+
         this.flagValid($field);
 
         return true;
@@ -12324,22 +12360,79 @@ CBR.isBrowserLargeScreen = function () {
         return this.options;
     };
 });
-;CBR.Models.Country = {
-    global: {
-        id: 0,
-        name: "Global"
-    }
-};
+;CBR.Models.Country = P(CBR.Models.JsonSerializable, function (m) {
+    m.options = {  // Defaults
+    };
+
+    m.getId = function () {
+        return this.options.id;
+    };
+
+    m.getName = function () {
+        return this.options.name;
+    };
+});
+
+CBR.Models.Country.global = CBR.Models.Country({
+    id: 0,
+    name: "Global"
+});
 ;CBR.Models.Account = P(CBR.Models.JsonSerializable, function(m) {
     m.options = {  // Defaults
+    };
+
+    m.getId = function() {
+        return this.options.id;
     };
 
     m.getUsername = function() {
         return this.options.username;
     };
 
+    m.getEmail = function() {
+        return this.options.email;
+    };
+
     m.setPassword = function(password) {
         this.options.password = password;
+    };
+});
+;CBR.Models.Project = P(CBR.Models.JsonSerializable, function(m) {
+    m.options = {  // Defaults
+    };
+
+    m.getId = function() {
+        return this.options.id;
+    };
+
+    m.getOwner = function() {
+        var owner = this.options.owner;
+        return owner ? new CBR.Models.Account(owner) : null;
+    };
+
+    m.getTitle = function() {
+        return this.options.title;
+    };
+
+    m.getDescription = function() {
+        return this.options.description;
+    };
+
+    m.getHomepageUrl = function() {
+        return this.options.homepageUrl;
+    };
+
+    m.getCountry = function() {
+        var country = this.options.country;
+        return country ? new CBR.Models.Country(country) : CBR.Models.Country.global;
+    };
+
+    m.getLocality = function() {
+        return this.options.locality;
+    };
+
+    m.getCreationTimestamp = function() {
+        return this.options.creationTimestamp;
     };
 });
 ;CBR.Controllers.Base = P(function (c) {
@@ -12348,7 +12441,7 @@ CBR.isBrowserLargeScreen = function () {
         unauthorized: 401
     };
 
-    c.floatingAlertFadeOutDelay = 1500;
+    c._floatingAlertFadeOutDelay = 1500;
 
     c.init = function (options) {
         this.options = options;
@@ -12427,7 +12520,7 @@ CBR.isBrowserLargeScreen = function () {
             $floatingAlerts.fadeOut("slow", function () {
                 $floatingAlerts.remove();
             });
-        }, this.floatingAlertFadeOutDelay);
+        }, this._floatingAlertFadeOutDelay);
     };
 
     c.showAlert = function (text) {
@@ -12448,7 +12541,7 @@ CBR.isBrowserLargeScreen = function () {
             $floatingAlert.fadeOut("slow", function () {
                 $floatingAlert.remove();
             });
-        }, this.floatingAlertFadeOutDelay);
+        }, this._floatingAlertFadeOutDelay);
     };
 
     c._applyModernizrRules = function () {
@@ -12468,36 +12561,94 @@ CBR.isBrowserLargeScreen = function () {
             $floatingAlert.show();
         });
     };
-});;CBR.Controllers.NewProjectPic = P(CBR.Controllers.Base, function (c, base) {
-    c.facebookProjectPictureRatio = 360 / 1430;
+});;CBR.Controllers.CitizenHiveOpenProjectsBase = P(CBR.Controllers.Base, function (c, base) {
+    c._facebookProjectPictureRatio = 360 / 1430;
 
     c.initElements = function () {
         base.initElements.call(this);
-
-        this.$newProjectPic = $(".new-project-pic");
-
-        this._initProjectPictureHeight(this.$newProjectPic);
     };
 
-    c.initEvents = function () {
-        window.onresize = _.debounce($.proxy(this._initProjectPictureHeight, this), 100);
+    c.resizeProjectPicOnResize = function($projectPic) {
+        window.onresize = _.debounce(function (e) {
+            this.initProjectPictureHeight($projectPic);
+        }.bind(this), 100);
+    };
+
+    c.initNewProjectPic = function($projectPic) {
+        // CSS style set in JavaScript to prevent caching
+        $projectPic.css("background-image", "url(/files/project-pic/temp?time=" + new Date().getTime() + ")");
+
+        this.initProjectPictureHeight($projectPic);
     };
 
     // We set the height in JS because it's hard to do in CSS, cf. http://stackoverflow.com/questions/5657964/css-why-doesn-t-percentage-height-work
-    c._initProjectPictureHeight = function () {
-        this.$newProjectPic.height(this.$newProjectPic.width() * this.facebookProjectPictureRatio);
+    c.initProjectPictureHeight = function ($projectPics) {
+        $projectPics.each(function (index, element) {
+            var $div = $(element);
+            $div.height($div.width() * this._facebookProjectPictureRatio);
+        }.bind(this));
     };
 });
-;CBR.Controllers.Index = P(CBR.Controllers.Base, function(c, base) {
+;CBR.Controllers.Index = P(CBR.Controllers.CitizenHiveOpenProjectsBase, function (c, chopBase) {
+    c._isToCheckIfAnyPartOfTheElementIsVisible = true;
+
     c.run = function () {
         this._initElements();
+        this._initEvents();
     };
 
     c._initElements = function () {
-        base.initElements.call(this);
+        chopBase.initElements.call(this);
+
+        this.$listItems = $("li");
+        this.$projectPics = this.$listItems.children(".project-pic");
+        this.$projectTitleAnchors = this.$listItems.children("h2").children();
+
+        $(".description").dotdotdot({
+            height: 98  // ~ 4 lines
+        });
+
+        this.initProjectPictureHeight(this.$projectPics);
+        this._loadPicsIfVisible();
+    };
+
+    c._initEvents = function () {
+        $(window).scroll(_.debounce($.proxy(this._loadPicsIfVisible, this), 15));
+
+        window.onresize = _.debounce(function (e) {
+            this.initProjectPictureHeight(this.$projectPics);
+            this._loadPicsIfVisible();
+        }.bind(this), 100);
+
+        this.$listItems.click(this._navigateToProjectPage);
+        this.$projectTitleAnchors.click(this._stopPropagation);
+    };
+
+    c._loadPicsIfVisible = function () {
+        this.$projectPics.filter(".loading").each(function (index, element) {
+            var $div = $(element);
+
+            var projectId = $div.parent().data("id");
+
+            if ($div.visible(this._isToCheckIfAnyPartOfTheElementIsVisible)) {
+                $div.removeClass("loading")
+                    .css("background-image", "url(/files/project-pic/" + projectId + ")")
+                    .addClass("loaded");
+            }
+        }.bind(this));
+    };
+
+    c._navigateToProjectPage = function (e) {
+        location.href = "/projects/" + e.currentTarget.getAttribute("data-id");
+    };
+
+    c._stopPropagation = function (e) {
+        e.stopPropagation();
     };
 });
-;CBR.Controllers.CreateProject = P(CBR.Controllers.NewProjectPic, function (c, newProjectPic) {
+;CBR.Controllers.CreateProject = P(CBR.Controllers.CitizenHiveOpenProjectsBase, function (c, chopBase) {
+    c.projectPicMaxFileSize = 3 * 1024 * 1024;  // 3 MB
+
     c.run = function () {
         this._initElements();
         this._initValidation();
@@ -12505,9 +12656,11 @@ CBR.isBrowserLargeScreen = function () {
     };
 
     c._initElements = function () {
-        newProjectPic.initElements.call(this);
+        chopBase.initElements.call(this);
 
         this.$form = $("form");
+        this.$newProjectPic = $(".project-pic.new");
+        this.$fileUploadError = $(".other-form-error");
         this.$title = $("#title");
         this.$description = $("#description");
         this.$homepageUrl = $("#homepage-url");
@@ -12515,21 +12668,30 @@ CBR.isBrowserLargeScreen = function () {
         this.$locality = $("#locality");
         this.$submitBtn = $("[type=submit]");
 
+        this.initNewProjectPic(this.$newProjectPic);
+
         $("#fine-uploader").fineUploader({
             uploaderType: 'basic',
             button: $("#upload-btn")[0],
             request: {
                 endpoint: '/files/project-pic/temp'
+            },
+            multiple: false,
+            validation: {
+                allowedExtensions: ['jpeg', 'jpg', 'png'],
+                sizeLimit: this.projectPicMaxFileSize
             }
         })
-            .on('upload', function (fileId, fileName) {
+            .on('upload', function (e, fileId, fileName) {
+                this.$fileUploadError.hide();
                 this.$newProjectPic.addClass("loading");
             }.bind(this))
-            .on('error', function (fileId, fileName, errorReason, xhr) {
-                alert("Upload error :(");
-            })
-            .on('complete', function (fileId, fileName, responseJSON, xhr) {
-                if (xhr.success) {
+            .on('error', function (e, fileId, fileName, errorReason, xhr) {
+                this.$fileUploadError.html(errorReason);
+                this.$fileUploadError.show();
+            }.bind(this))
+            .on('complete', function (e, fileId, fileName, responseJSON, xhr) {
+                if (responseJSON.success) {
                     this.$newProjectPic.removeClass("loading")
                         .css("background-image", "url(/files/project-pic/temp?time=" + new Date().getTime() + ")");
                 }
@@ -12551,7 +12713,7 @@ CBR.isBrowserLargeScreen = function () {
     };
 
     c._initEvents = function () {
-        newProjectPic.initEvents.call(this);
+        this.resizeProjectPicOnResize(this.$newProjectPic);
 
         this.$countrySelect.change($.proxy(this._onCountryChange, this));
         this.$form.submit($.proxy(this._doSubmit, this));
@@ -12597,7 +12759,7 @@ CBR.isBrowserLargeScreen = function () {
                 data: JSON.stringify(project)
             }).done(function (data, textStatus, jqXHR) {
                     location.href = "/projects/new/preview";
-                }.bind(this)
+                }
             ).fail(function (jqXHR, textStatus, errorThrown) {
                     this.$submitBtn.button('reset');
                     alert("AJAX fail :(");
@@ -12605,27 +12767,100 @@ CBR.isBrowserLargeScreen = function () {
         }
     };
 });
-;CBR.Controllers.PreviewNewProject = P(CBR.Controllers.NewProjectPic, function (c, newProjectPic) {
+;CBR.Controllers.PreviewNewProject = P(CBR.Controllers.CitizenHiveOpenProjectsBase, function (c, chopBase) {
     c.run = function () {
         this._initElements();
         this._initEvents();
     };
 
     c._initElements = function () {
-        newProjectPic.initElements.call(this);
+        chopBase.initElements.call(this);
 
+        this.$newProjectPic = $(".project-pic.new");
         this.$editBtn = $("#edit");
         this.$nextBtn = $("#next");
+
+        this.initNewProjectPic(this.$newProjectPic);
     };
 
     c._initEvents = function () {
-        newProjectPic.initEvents.call(this);
+        this.resizeProjectPicOnResize(this.$newProjectPic);
 
         this.$editBtn.click(this._navigateBack);
+        this.$nextBtn.click(this._navigateToNextPage);
     };
 
     c._navigateBack = function(e) {
         history.back();
+    };
+
+    c._navigateToNextPage = function(e) {
+        location.href = "/join";
+    };
+});
+;CBR.Controllers.Join = P(CBR.Controllers.CitizenHiveOpenProjectsBase, function (c, chopBase) {
+    c.run = function () {
+        this._initElements();
+        this._initEvents();
+    };
+
+    c._initElements = function () {
+        chopBase.initElements.call(this);
+
+        this.$form = $("form");
+        this.$submitBtn = $("[type=submit]");
+    };
+
+    c._initEvents = function () {
+        this.$form.submit($.proxy(this._doSubmit, this));
+    };
+
+    c._doSubmit = function (e) {
+        if (e) {
+            e.preventDefault();
+        }
+
+        this.$submitBtn.button('loading');
+
+        $.ajax({
+            url: "/api/projects",
+            type: "POST"
+        }).done(function (data, textStatus, jqXHR) {
+                location.href = "/";
+            }
+        ).fail(function (jqXHR, textStatus, errorThrown) {
+                this.$submitBtn.button('reset');
+                alert("AJAX fail :(");
+            }.bind(this));
+    };
+});
+;CBR.Controllers.ViewProject = P(CBR.Controllers.CitizenHiveOpenProjectsBase, function (c, chopBase) {
+    c.run = function () {
+        this._initElements();
+        this._initEvents();
+    };
+
+    c._initElements = function () {
+        chopBase.initElements.call(this);
+
+        this.$projectPic = $(".project-pic");
+
+        this._initProjectPic();
+    };
+
+    c._initEvents = function () {
+        this.resizeProjectPicOnResize(this.$projectPic);
+    };
+
+    c._getProject = function() {
+        return new CBR.Models.Project(this.options.project);
+    };
+
+    c._initProjectPic = function() {
+        // CSS style set in JavaScript to prevent caching
+        this.$projectPic.css("background-image", "url(/files/project-pic/" + this._getProject().getId() + ")");
+
+        this.initProjectPictureHeight(this.$projectPic);
     };
 });
 ;

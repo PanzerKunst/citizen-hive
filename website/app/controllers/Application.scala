@@ -2,7 +2,7 @@ package controllers
 
 import java.util.UUID
 
-import db.{AccountDto, CountryDto}
+import db.{ProjectDto, AccountDto, CountryDto}
 import models.{Country, Project, Account}
 import play.api.mvc._
 import services.JsonUtil
@@ -12,7 +12,7 @@ object Application extends Controller {
   val doNotCachePage = Array(CACHE_CONTROL -> "no-cache, no-store")
 
   def index = Action { request =>
-    Ok(views.html.index(isSignedIn(request.session)))
+    Ok(views.html.index(isSignedIn(request.session), ProjectDto.getAll))
   }
 
   def createProject = Action { request =>
@@ -35,6 +35,20 @@ object Application extends Controller {
 
       case None =>
         BadRequest("Project not found in session")
+    }
+  }
+
+  def join = Action { request =>
+    Ok(views.html.join(isSignedIn(request.session)))
+  }
+
+  def viewProject(id: Long) = Action { request =>
+    ProjectDto.getOfId(id) match {
+      case Some(project) =>
+        Ok(views.html.viewProject(isSignedIn(request.session), project))
+
+      case None =>
+        BadRequest("No project found for ID " + id)
     }
   }
 

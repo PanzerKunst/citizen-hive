@@ -10,9 +10,10 @@
     Content
 -->
 <div id="fine-uploader"></div>
-<div class="new-project-pic">
+<div class="project-pic new">
     <a id="upload-btn" class="btn btn-default btn-xs">Change picture</a>
 </div>
+<p class="other-form-error"></p>
 
 <form role="form">
     <section class="form-groups wide">
@@ -33,10 +34,10 @@
 
         <div class="form-group">
             <label for="homepage-url">URL of the homepage <span>*</span></label><!--
-         --><input type="text" id="homepage-url" class="form-control" maxlength="64" data-min-length="7" />
+         --><input type="text" id="homepage-url" class="form-control" maxlength="64" />
 
             <p class="field-error" data-check="empty"></p>
-            <p class="field-error" data-check="min-length">Seven characters minimun</p>
+            <p class="field-error" data-check="url">That URL doesn't seem correct...</p>
         </div>
     </section>
 

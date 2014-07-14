@@ -1,4 +1,50 @@
 #index {
   #content {
+    max-width: none;
+
+    padding-top: $line-height-computed;
+
+    /* To center the list */
+    text-align: center;
+
+    // We want the same font size on all resolutions
+    h2 {
+      @include large-screen {
+        font-size: $font-size-h4;
+      }
+    }
+
+    > ul {
+      /* To reset 'text-align' to the default */
+      text-align: left;
+
+      list-style-type: none;
+      padding: 0;
+
+      display: inline;
+    }
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+
+      width: $field-width;
+      margin: 0 $line-height-computed $line-height-computed 0;
+
+      background-color: $gray-lighter;
+
+      &:hover {
+        background-color: darken($gray-lighter, 10%);
+        cursor: pointer;
+      }
+    }
+
+    .description {
+      margin: $line-height-computed / 2;
+
+      > p {
+        margin-bottom: 0;
+      }
+    }
   }
 }

@@ -5,9 +5,7 @@ import play.Play
 import play.api.mvc.{Action, Controller}
 
 object DbAdminApi extends Controller {
-  def reCreateTables = Action {
-    implicit request =>
-
+  def reCreateTables = Action { request =>
       if (request.queryString.contains("key") &&
         request.queryString.get("key").get.head == Play.application().configuration().getString("application.secret")) {
         DbAdmin.reCreateTables()

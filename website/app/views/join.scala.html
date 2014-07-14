@@ -1,0 +1,29 @@
+@(isSignedIn: Boolean)
+@main("Join the Hive!", "join") {
+<!--
+    Header
+-->
+@navbar(isSignedIn, "join")
+
+} {
+<!--
+    Content
+-->
+<form role="form">
+    <div class="submit-wrapper">
+        <button type="submit" class="btn btn-primary" data-loading-text="Joining the Hive and adding project...">Join the Hive and add my Project!</button>
+    </div>
+</form>
+} {
+<!--
+    Javascript
+-->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        CBR.Controllers.Join({
+            el: "#content"
+        }).run();
+    });
+</script>
+
+}

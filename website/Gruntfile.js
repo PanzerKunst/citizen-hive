@@ -61,10 +61,11 @@ module.exports = function (grunt) {
                     "libs/fastclick.js",
                     //"libs/handlebars.runtime-v1.3.0.js",
                     "libs/lodash.min.js",
-                    //"libs/jquery.visible.min.js",
+                    "libs/jquery.visible.min.js",
                     //"libs/js-breakpoints/breakpoints.js",
                     //"libs/moment.min.js",
                     "libs/jquery.fineuploader-5.0.3/jquery.fineuploader-5.0.3.js",
+                    "libs/jquery.dotdotdot.min.js",
 
                     // Global
                     "javascripts/global.js",
@@ -76,13 +77,16 @@ module.exports = function (grunt) {
                     "javascripts/models/jsonSerializable.js",
                     "javascripts/models/country.js",
                     "javascripts/models/account.js",
+                    "javascripts/models/project.js",
 
                     // Controllers
                     "javascripts/controllers/base.js",
-                    "javascripts/controllers/newProjectPic.js",
+                    "javascripts/controllers/citizenHiveOpenProjectsBase.js",
                     "javascripts/controllers/index.js",
                     "javascripts/controllers/createProject.js",
                     "javascripts/controllers/previewNewProject.js",
+                    "javascripts/controllers/join.js",
+                    "javascripts/controllers/viewProject.js",
 
                     // Templates
                     "javascripts/templates/handlebarsHelpers.js",

@@ -1,9 +1,9 @@
-.new-project-pic {
+.project-pic {
   // To center
   margin: auto;
 
   // Location of the image
-  background-image: url(/files/project-pic/temp);
+  //background-image: url(/files/project-pic/temp); Done in JavaScript, to prevent caching
 
   // Background image is centered vertically and horizontally at all times
   background-position: center center;
@@ -18,8 +18,57 @@
   background-color: $gray-light;
 
   &.loading {
-    background-image: url(/assets/images/loading.gif);
+    background-image: url(/assets/images/spinner_16x16.gif);
     background-size: auto;
     background-color: #fff;
+
+    &.new {
+      background-image: url(/assets/images/loading.gif);
+    }
+  }
+}
+
+#content.project-details {
+  #for-background {
+    background-color: $gray-lighter;
+
+    @include large-screen {
+      font-size: $font-size-body-large-screen;
+    }
+
+    > .centered-contents {
+      $location-font-size: 16px;
+
+      font-size: $location-font-size;
+
+      @include large-screen {
+        font-size: $location-font-size + 2;
+      }
+    }
+  }
+
+  > .centered-contents {
+    margin-top: $line-height-computed;
+  }
+
+  h1 {
+    padding-bottom: 0;
+  }
+
+  #description {
+    padding: 1em;
+    text-align: justify;
+  }
+
+  #go-to-link {
+    margin-bottom: $line-height-computed;
+
+    $go-to-link-font-size: 18px;
+
+    font-size: $go-to-link-font-size;
+
+    @include large-screen {
+      font-size: $go-to-link-font-size + 2;
+    }
   }
 }

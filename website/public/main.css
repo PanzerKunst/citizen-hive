@@ -218,13 +218,20 @@ body {
   #content a,
   #content a:visited {
     text-decoration: none;
-    cursor: pointer; }
+    cursor: pointer;
+    word-wrap: break-word; }
   #content a,
   #content span {
     display: inline-block; }
   #content textarea {
     resize: vertical;
     height: 8em; }
+  #content .other-form-error {
+    display: none;
+    font-style: italic;
+    font-size: 13px;
+    color: #a94442;
+    text-align: center; }
 
 .mdnz-polyfill {
   display: none; }
@@ -254,13 +261,6 @@ body {
   border-radius: 3px;
   text-align: center;
   display: none; }
-
-.other-form-error {
-  display: none;
-  font-style: italic;
-  font-size: 13px;
-  color: #a94442;
-  text-align: center; }
 
 html,
 body {
@@ -342,17 +342,42 @@ footer {
     display: block;
     margin: auto; }
 
-.new-project-pic {
+.project-pic {
   margin: auto;
-  background-image: url(/files/project-pic/temp);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #777777; }
-  .new-project-pic.loading {
-    background-image: url(/assets/images/loading.gif);
+  .project-pic.loading {
+    background-image: url(/assets/images/spinner_16x16.gif);
     background-size: auto;
     background-color: #fff; }
+    .project-pic.loading.new {
+      background-image: url(/assets/images/loading.gif); }
+
+#content.project-details #for-background {
+  background-color: #eeeeee; }
+  @media screen and (min-width: 49.5em) {
+    #content.project-details #for-background {
+      font-size: 16px; } }
+  #content.project-details #for-background > .centered-contents {
+    font-size: 16px; }
+    @media screen and (min-width: 49.5em) {
+      #content.project-details #for-background > .centered-contents {
+        font-size: 18px; } }
+#content.project-details > .centered-contents {
+  margin-top: 20px; }
+#content.project-details h1 {
+  padding-bottom: 0; }
+#content.project-details #description {
+  padding: 1em;
+  text-align: justify; }
+#content.project-details #go-to-link {
+  margin-bottom: 20px;
+  font-size: 18px; }
+  @media screen and (min-width: 49.5em) {
+    #content.project-details #go-to-link {
+      font-size: 20px; } }
 
 html {
   font-size: 14px; }
@@ -378,8 +403,36 @@ html {
 .qq-upload-button-hover {
   background: none repeat scroll 0 0 white; }
 
+#index #content {
+  max-width: none;
+  padding-top: 20px;
+  /* To center the list */
+  text-align: center; }
+  @media screen and (min-width: 49.5em) {
+    #index #content h2 {
+      font-size: 18px; } }
+  #index #content > ul {
+    /* To reset 'text-align' to the default */
+    text-align: left;
+    list-style-type: none;
+    padding: 0;
+    display: inline; }
+  #index #content li {
+    display: inline-block;
+    vertical-align: top;
+    width: 20em;
+    margin: 0 20px 20px 0;
+    background-color: #eeeeee; }
+    #index #content li:hover {
+      background-color: #d5d5d5;
+      cursor: pointer; }
+  #index #content .description {
+    margin: 10px; }
+    #index #content .description > p {
+      margin-bottom: 0; }
+
 @media screen and (min-width: 39.5em) {
-  #create-project #content .new-project-pic {
+  #create-project #content .project-pic {
     max-width: 42em; } }
 #create-project #content form {
   margin-top: 20px; }
@@ -410,20 +463,5 @@ html {
   float: right;
   margin: 0.5em 0.5em 0 0; }
 
-#project-preview #content #for-background {
-  background-color: #eeeeee; }
-  @media screen and (min-width: 49.5em) {
-    #project-preview #content #for-background {
-      font-size: 16px; } }
-#project-preview #content > .centered-contents {
-  margin-top: 20px; }
-#project-preview #content h1 {
-  padding-bottom: 0; }
-#project-preview #content #description {
-  padding: 1em;
-  text-align: justify; }
-#project-preview #content #go-to-link {
-  font-size: 20px;
-  margin-bottom: 20px; }
 #project-preview #content #edit {
   margin-right: 2em; }

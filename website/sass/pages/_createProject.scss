@@ -1,6 +1,6 @@
 #create-project {
   #content {
-    .new-project-pic {
+    .project-pic {
       @include medium-screen {
         max-width: $field-width + $space-between-fields + $field-width;
       }

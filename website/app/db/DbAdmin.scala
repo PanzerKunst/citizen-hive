@@ -68,7 +68,7 @@ object DbAdmin {
             title varchar(64) not null,
             description varchar(4096) not null,
             homepage_url varchar(64) not null,
-            country_id bigserial references country(id),
+            country_id bigint references country(id), /* We use bigint here instead of bigserial otherwise the column is created as not null */
             locality varchar(64),
             creation_timestamp bigint not null
             );"""

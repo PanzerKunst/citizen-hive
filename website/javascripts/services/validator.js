@@ -7,7 +7,7 @@ CBR.Services.Validator = P(function (s) {
     s.checkMaxLength = "max-length";
     s.checkInteger = "integer";
     s.checkDecimal = "decimal";
-    s.checkUrl = "url"; // TODO
+    s.checkUrl = "url";
 
     s.init = function (options) {
         this.options = options;
@@ -98,6 +98,10 @@ CBR.Services.Validator = P(function (s) {
         return this._get$error($field, this.checkDecimal);
     };
 
+    s._get$url = function ($field) {
+        return this._get$error($field, this.checkUrl);
+    };
+
     s._get$error = function ($field, checkType) {
         return $field.parent().find("p[data-check=" + checkType + "]");
     };
@@ -134,16 +138,20 @@ CBR.Services.Validator = P(function (s) {
         return this._get$decimal($field).length === 1;
     };
 
-    s._isValidEmail = function (email) {
+    s._isToCheckIfUrl = function ($field) {
+        return this._get$url($field).length === 1;
+    };
+
+    s._isEmail = function (email) {
         if (email === "")
             return true;
 
-        var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+        var reg = /^([a-z0-9_\-\.])+\@([a-z0-9_\-\.])+\.([a-z]{2,4})$/i;
         return reg.test(email);
     };
 
-    s._isValidUsername = function (username) {
-        var reg = /^([A-Za-z0-9_\-])+$/;
+    s._isUsername = function (username) {
+        var reg = /^([a-z0-9_\-])+$/i;
         return reg.test(username);
     };
 
@@ -184,6 +192,11 @@ CBR.Services.Validator = P(function (s) {
         return reg.test(value);
     };
 
+    s._isUrl = function(url) {
+        var reg = /^((https?|ftp|irc):\/\/)?(www\d?|[a-z0-9]+)?\.[a-z0-9-]+(\:|\.)([a-z0-9.]+|(\d+)?)([/?:].*)?$/i;
+        return reg.test(url);
+    };
+
     s._validateField = function ($field, isOnBlur) {
 
         // Empty?
@@ -209,7 +222,7 @@ CBR.Services.Validator = P(function (s) {
 
         // Email?
         if (this._isToCheckIfEmail($field)) {
-            if (!this._isValidEmail($field.val())) {
+            if (!this._isEmail($field.val())) {
                 this.flagInvalid($field);
                 this._slideDownErrorMessage(this._get$email($field));
                 return false;
@@ -220,7 +233,7 @@ CBR.Services.Validator = P(function (s) {
 
         // Username?
         if (this._isToCheckIfUsername($field)) {
-            if (!this._isValidUsername($field.val())) {
+            if (!this._isUsername($field.val())) {
                 this.flagInvalid($field);
                 this._slideDownErrorMessage(this._get$username($field));
                 return false;
@@ -276,6 +289,16 @@ CBR.Services.Validator = P(function (s) {
                 return false;
             }
             this._slideUpErrorMessage(this._get$decimal($field));
+        }
+
+        // URL?
+        if (this._isToCheckIfUrl($field)) {
+            if (!this._isUrl($field.val())) {
+                this.flagInvalid($field);
+                this._slideDownErrorMessage(this._get$url($field));
+                return false;
+            }
+            this._slideUpErrorMessage(this._get$url($field));
         }
 
         this.flagValid($field);

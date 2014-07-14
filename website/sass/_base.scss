@@ -79,6 +79,8 @@ body {
     text-decoration: none;
     // TODO color: $actionColor;
     cursor: pointer;  // To have the pointer on anchors which don't have any href
+
+    word-wrap: break-word;
   }
 
   /* TODO a:hover,
@@ -94,6 +96,15 @@ body {
   textarea {
     resize: vertical;
     height: 8em;
+  }
+
+  .other-form-error {
+    display: none;
+
+    font-style: italic;
+    font-size: $font-size-input-error;
+    color: $state-danger-text;
+    text-align: center;
   }
 }
 
@@ -136,13 +147,4 @@ body {
 
   // Because we want to center it via negative left margin in Javascript
   display: none;
-}
-
-.other-form-error {
-  display: none;
-
-  font-style: italic;
-  font-size: $font-size-input-error;
-  color: $state-danger-text;
-  text-align: center;
 }

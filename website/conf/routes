@@ -7,8 +7,11 @@ GET     /assets/*file                           controllers.Assets.at(path="/pub
 
 # Pages
 GET     /                                       controllers.Application.index
+GET     /projects                               controllers.Application.index
 GET     /projects/new                           controllers.Application.createProject
 GET     /projects/new/preview                   controllers.Application.previewNewProject
+GET     /join                                   controllers.Application.join
+GET     /projects/:id                           controllers.Application.viewProject(id: Long)
 
 # API
 POST    /api/db/re-create-tables                controllers.api.DbAdminApi.reCreateTables
@@ -19,3 +22,4 @@ POST    /api/projects/temp                      controllers.api.ProjectApi.saveI
 # Files
 POST    /files/project-pic/temp                 controllers.FileController.uploadTempProjectPicture
 GET     /files/project-pic/temp                 controllers.FileController.serveTempProjectPicture
+GET     /files/project-pic/:projectId           controllers.FileController.serveProjectPicture(projectId: Long)

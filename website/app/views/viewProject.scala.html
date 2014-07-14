@@ -1,16 +1,16 @@
 @(isSignedIn: Boolean, project: Project)
-@main("Project preview", "project-preview") {
+@main(project.title, "view-project") {
 <!--
     Header
 -->
-@navbar(isSignedIn, "project-preview")
+@navbar(isSignedIn, "view-project")
 
 } {
 <!--
     Content
 -->
 <div id="for-background">
-    <div class="project-pic new"></div>
+    <div class="project-pic"></div>
 
     <h1><a href="@project.homepageUrl" target="_blank">@project.title</a></h1>
 
@@ -29,24 +29,15 @@
         <a id="go-to-link" href="@project.homepageUrl" target="_blank">Go to project homepage</a></h1>
     </div>
 </div>
-
-<div class="centered-contents">
-    <button id="edit" class="btn btn-default">
-        <span class="glyphicon glyphicon-chevron-left"></span> Edit
-    </button><!--
-
- --><button id="next" class="btn btn-primary">
-        Next <span class="glyphicon glyphicon-chevron-right"></span>
-    </button>
-</div>
 } {
 <!--
     Javascript
 -->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-        CBR.Controllers.PreviewNewProject({
-            el: "#content"
+        CBR.Controllers.ViewProject({
+            el: "#content",
+            project: @Html(play.api.libs.json.Json.toJson(project).toString)
         }).run();
     });
 </script>

@@ -4,7 +4,7 @@ CBR.Controllers.Base = P(function (c) {
         unauthorized: 401
     };
 
-    c.floatingAlertFadeOutDelay = 1500;
+    c._floatingAlertFadeOutDelay = 1500;
 
     c.init = function (options) {
         this.options = options;
@@ -83,7 +83,7 @@ CBR.Controllers.Base = P(function (c) {
             $floatingAlerts.fadeOut("slow", function () {
                 $floatingAlerts.remove();
             });
-        }, this.floatingAlertFadeOutDelay);
+        }, this._floatingAlertFadeOutDelay);
     };
 
     c.showAlert = function (text) {
@@ -104,7 +104,7 @@ CBR.Controllers.Base = P(function (c) {
             $floatingAlert.fadeOut("slow", function () {
                 $floatingAlert.remove();
             });
-        }, this.floatingAlertFadeOutDelay);
+        }, this._floatingAlertFadeOutDelay);
     };
 
     c._applyModernizrRules = function () {

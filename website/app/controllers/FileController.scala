@@ -25,6 +25,17 @@ object FileController extends Controller {
     }
   }
 
+  def serveProjectPicture(projectId: Long) = Action { request =>
+    getProjectPicture(projectId) match {
+      case Some(file) => Ok.sendFile(
+        content = file,
+        inline = true
+      ).withHeaders(Application.doNotCachePage: _*)
+
+      case None => NoContent
+    }
+  }
+
   def uploadTempProjectPicture() = Action(parse.multipartFormData) { request =>
     val requestBody = request.body
 
@@ -55,25 +66,45 @@ object FileController extends Controller {
     }
   }
 
-  /* TODO def saveTempProfilePicture(userId: String) {
-    getProjectPicture(userId, true) match {
-      case Some(tempFile) =>
+  def saveTempProfilePicture(projectId: Long, sessionId: String) {
+    getProjectPicture(projectId) match {
+      case Some(file) =>
         // Deleting actual profile pic
-        getProjectPicture(userId, false) match {
-          case Some(file) => deleteFile(file)
-          case None =>
-        }
+        deleteFile(file)
 
-        val fileName = tempFile.getName
-        val extension = fileName.substring(fileName.lastIndexOf("."))
-        if (!tempFile.renameTo(new File(profilePicturesDir.getPath + "/" + userId + extension)))
-          throw new FileSystemException("Temporary profile pic couldn't be moved to non-temp file!")
       case None =>
     }
-  } */
 
-  private def getTempProjectPicture(sessionId: String) = {
-    val matchingRegex = (sessionId + """\.tmp\.(jpg|jpeg|png)""").r
+    getTempProjectPicture(sessionId) match {
+      case Some(tempFile) =>
+        val fileName = tempFile.getName
+        val extension = fileName.substring(fileName.lastIndexOf("."))
+        if (!tempFile.renameTo(new File(projectPicturesDir.getPath + "/" + projectId + extension))) {
+          throw new FileSystemException("Temporary project pic couldn't be moved to non-temp file!")
+        }
+
+      case None =>
+    }
+  }
+
+  private def getTempProjectPicture(sessionId: String): Option[File] = {
+    val isTemp = true
+    getProjectPicture(sessionId, isTemp)
+  }
+
+  private def getProjectPicture(projectId: Long): Option[File] = {
+    val isTemp = false
+    getProjectPicture(projectId.toString, isTemp)
+  }
+
+  private def getProjectPicture(pictureId: String, isTemp: Boolean): Option[File] = {
+    val prefix = if (isTemp) {
+      """\.tmp"""
+    } else {
+      ""
+    }
+
+    val matchingRegex = (pictureId + prefix + """\.(jpg|jpeg|png)""").r
 
     val matchingFiles = projectPicturesDir.listFiles.filter(f => matchingRegex.findFirstIn(f.getName).isDefined)
 

@@ -2,6 +2,7 @@ package models
 
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.regex.Pattern
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import play.api.libs.json.{JsValue, Json, Writes}
@@ -22,7 +23,21 @@ case class Project(@JsonDeserialize(contentAs = classOf[java.lang.Long])
   }
 
   def getDescriptionForWeb: String = {
-    description.replaceAll("\\\\\n", "<br />")
+    val matcher = Project.regexPatternUrl.matcher(description)
+
+    val linkifiedDescription = if (matcher.find()) {
+      val protocolMatcher = Project.regexPatternProtocol.matcher(matcher.group(1))
+
+      if (protocolMatcher.find()) {
+        matcher.replaceAll("<a href=\"$1\" target=\"_blank\">$1</a>")
+      } else {
+        matcher.replaceAll("<a href=\"http://$1\" target=\"_blank\">$1</a>")
+      }
+    } else {
+      description
+    }
+
+    linkifiedDescription.replaceAll("\\n", "<br />")
   }
 }
 
@@ -41,4 +56,7 @@ object Project {
       )
     }
   }
+
+  val regexPatternUrl = Pattern.compile("(?i)\\b((?:[a-z]+://|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:\'\".,<>???“”‘’]))")
+  val regexPatternProtocol = Pattern.compile("(?i)^[a-z]+://")
 }
